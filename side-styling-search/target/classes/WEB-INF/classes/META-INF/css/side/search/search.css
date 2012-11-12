@@ -1,0 +1,19 @@
+@import "search-parameters-set-main.css";
+@import "search-parameters-set-specific.css";
+@import "search-range.css";
+@import "search-select.css";
+
+.share-form .form-container .form-fields {
+	background-color: white;
+	height: 300px;
+}
+
+select {
+	//	width: 100px;
+	// Overridden by width: auto;
+	float: left;
+}
+
+label {
+	clear: none;
+}

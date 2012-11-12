@@ -1,0 +1,93 @@
+<project xmlns:artifact="antlib:org.apache.maven.artifact.ant" name="alfrescoShare.theme" default="patchWebapps">
+	<property file="${user.home}/build.properties" />
+	<property file="${basedir}/../../../../build.${user.name}.properties" />
+	<property file="build.${user.name}.properties" />
+	<path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.1.3.jar" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+	<artifact:pom id="mypom" file="pom.xml" />
+	<property name="moduleId" value="${mypom.artifactId}" />
+	<property name="webappName" value="share" />
+	<!-- =================================
+	          target: name
+	         ================================= -->
+	<target name="patchWebapps" depends="maven_install" description="build and install in local alfresco">
+		<echo message="use maven to build package..." />
+
+		<echo message="==========" />
+		<echo message="patch the web application webapps.home=${webapps.home}" />
+
+		<delete verbose="true" quiet="true">
+			<fileset dir="${webapps.home}/${webappName}/WEB-INF/lib">
+				<include name="${moduleId}-*.jar" />
+			</fileset>
+		</delete>
+
+		<unzip dest="${webapps.home}/${webappName}" overwrite="true" src="target/${moduleId}-${mypom.version}.zip">
+		</unzip>
+
+		<echo message="==========" />
+
+	</target>
+
+	<target name="clean" description="Cleans the target directory">
+		<delete dir="target"/>
+	</target>
+
+	<target name="package" depends="clean" description="package the classes and resources in a jar file">
+		<echo message="use maven to package..." />
+
+		<maven basedir="${basedir}" options="-P public" goal="clean" resultproperty="maven.build.result" />
+		<maven basedir="${basedir}" options="-P public" goal="package" resultproperty="maven.build.result" />
+
+		<zip destfile="target/${moduleId}-${mypom.version}.jar">
+			<fileset dir="target/${moduleId}-${mypom.version}/WEB-INF/classes">
+				<include name="**/*" />
+			</fileset>
+		</zip>
+
+		<echo message="==========" />
+
+	</target>
+
+	<!-- =================================
+	          target: name
+	         ================================= -->
+	<target name="maven_install" depends="" description="do mvn install">
+		<maven basedir="${basedir}" options="-P public" goal="clean" resultproperty="maven.build.result" />
+		<maven basedir="${basedir}" options="-P public" goal="install" resultproperty="maven.build.result" />
+	</target>
+
+	<target name="maven_deploy" depends="" description="do mvn deploy">
+		<maven basedir="${basedir}" options="-P public" goal="clean" resultproperty="maven.build.result" />
+		<maven basedir="${basedir}" options="-P public" goal="deploy" resultproperty="maven.build.result" />
+	</target>
+
+	<!-- ========
+			we do not use artifact: to avoid jvm termination error
+		 ======== -->
+	<macrodef name="maven">
+		<attribute name="options" default="" />
+		<attribute name="goal" />
+		<attribute name="basedir" />
+		<attribute name="resultproperty" default="maven.result" />
+		<element name="args" implicit="true" optional="true" />
+		<sequential>
+			<java classname="org.codehaus.classworlds.Launcher" fork="true" dir="@{basedir}" resultproperty="@{resultproperty}">
+				<jvmarg value="-Xmx512m" />
+				<classpath>
+					<fileset dir="${maven.home}/boot">
+						<include name="*.jar" />
+					</fileset>
+					<fileset dir="${maven.home}/lib">
+						<include name="*.jar" />
+					</fileset>
+				</classpath>
+				<sysproperty key="classworlds.conf" value="${maven.home}/bin/m2.conf" />
+				<sysproperty key="maven.home" value="${maven.home}" />
+				<arg line="--batch-mode @{options} @{goal}" />
+			</java>
+			<echo message="exit code : ${maven.build.result}" />
+		</sequential>
+	</macrodef>
+
+</project>

@@ -1,0 +1,14 @@
+
+/* Label alignment on the left */
+.form-container label
+{
+   display: inline !important;
+   float: left;
+   text-align: right;
+   /*width: 11em;*/
+   width: 8em;
+   margin-right: 1em;
+   margin-top: 0.4em;
+   text-transform: capitalize;
+/*   font-weight: bolder;*/
+}

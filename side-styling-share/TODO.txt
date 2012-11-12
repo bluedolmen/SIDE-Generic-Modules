@@ -1,0 +1,11 @@
+This file contains enhancements, bugs, various things to do. They are not considered
+to be into a bug tracker until a reference is written in front of it.
+
+Once job is done, thanks to move it into the done section
+
+=Enhancements
+* Requisition's specific code should be extracted and put in another module
+
+==Done
+
+=Todos

@@ -1,0 +1,42 @@
+<webapp-structure>
+  <registeredFiles>
+    <entry>
+      <string>currentBuild</string>
+      <path-set>
+        <pathsSet class="linked-hash-set">
+          <string>lib/side-js-alfresco-1.0.0.jar</string>
+          <string>config/alfresco/module/SIDE_side-js-alfresco/context/service-context.xml</string>
+          <string>config/alfresco/module/SIDE_side-js-alfresco/log4j.properties</string>
+          <string>config/alfresco/module/SIDE_side-js-alfresco/module-context.xml</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Group-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Group.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/People-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/People.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Person-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Person.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Remote-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Remote.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Rule-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Rule.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Workflow/Start-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/Alfresco/Workflow/Start.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/initialization/DumpPermissions.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/initialization/test.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder-Spec.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Data.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Rule.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/requisition/workflow/Start.js</string>
+          <string>config/alfresco/webscripts/extension/js/SIDE/application/requisition/workflow/Util.js</string>
+          <string>web/licenses/README-licenses.txt</string>
+          <string>module.properties</string>
+        </pathsSet>
+      </path-set>
+    </entry>
+  </registeredFiles>
+</webapp-structure>

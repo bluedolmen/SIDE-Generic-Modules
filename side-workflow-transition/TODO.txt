@@ -1,0 +1,11 @@
+=1.1
+
+=1.0
+* Follow each workflow transition by executing the corresponding java method based on
+the same name
+
+TODO:
+* Rename the maven module from side-workflow-javascript to side-workflow-transition
+
+BUGS:
+* Import statements into javascript scripts are not interpreted correctly

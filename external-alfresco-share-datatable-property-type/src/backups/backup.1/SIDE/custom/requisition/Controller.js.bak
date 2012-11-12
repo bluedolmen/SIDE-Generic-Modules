@@ -1,0 +1,159 @@
+//goog.provide("SIDE.custom.Controller");
+var SIDE = SIDE || {
+	custom: {
+		Controller: {}
+	}
+};
+
+SIDE.custom.Controller.dispatch = function(htmlId) {
+	// HtmlId example:
+	// * text field:
+	// template_x002e_formPortlet_x002e_standalonecreateform_prop_yamma_com_sidelabs_is_operational_yamma_Dossier_name
+	// var matches = id.match(/^.*_prop_([^_]*)_(.*)$/g);
+	// Association
+	// * template_x002e_formPortlet_x002e_standalonecreateform_assoc_yamma_com_sidelabs_is_operational_yamma_Dossier_groups_com_sidelabs_is_operational_yamma_Document-cntrl-picker_c
+	// var matches = id.match(/^.*_assoc_([^_]*)_([^A-Z]*[A-Z][^_]*)_([^_]*)_([^A-Z]*[A-Z][^_]*)$/g);
+
+	var library = {
+			'SIDE.com.iminfo.kinedoc.Ouvrage.': function() {}
+	}
+
+	var id = htmlId.replace(/_x002e_/g,'\/');
+	var matches = null;
+
+	var property = null;
+	var association = null;
+
+	var pattern = /^.*prop_([^_]*)_(.*)_(.*)$/g;
+	matches = pattern.exec(id);
+	if (matches != null) {
+		// It's a property
+		property = {
+			model: matches[1],
+			clazz: matches[2].replace(/_/g, '.'),
+			name: matches[3]
+		}
+		var fn = null;
+		try {
+			// Call the hook on the field's parent form
+
+			// Call a general hook on this field
+			// We could use publish/subscribe pattern
+			fn = 'SIDE' + '.' + property.clazz + '.on';
+			eval(fn)('created', property.name, htmlId);
+
+		} catch (e) {
+			// We look in a hash table to see if there is an indirection to
+			// a hook for this field
+			var fn2 = library[fn];
+			eval(fn2)
+		}
+	} else {
+		// It's an association
+		// Is it possible on a textfield?
+		var pattern = /^.*_assoc_([^_]*)_([^A-Z]*[A-Z][^_]*)_([^_]*)_([^A-Z]*[A-Z][^_]*)$/g;
+		matches = pattern.exec(id);
+		if (matches != null) {
+			association = {
+				model: matches[1],
+				source: matches[2].replace(/_/g, '.'),
+				name: matches[3],
+				target: matches[4].replace(/_/g, '.')
+			}
+		}
+	}
+}
+
+SIDE.custom.Controller.on = function(htmlId){
+	var field = YAHOO.util.Dom.get(htmlId).id;
+	if (htmlId.match(/Requisition_ch_unog_dcm_oime_its_Order_allotment/)) {
+		YAHOO.util.Event.addListener(htmlId, 'change', updateAllotment);
+	};
+	if (htmlId.match(/Requisition_ch_unog_dcm_oime_its_Order_expended/)) {
+		YAHOO.util.Event.addListener(htmlId, 'change', updateExpended)
+	}
+	/* The following event doesn't seem to be triggered */
+	if (htmlId.match(/Requisition_ch_unog_dcm_oime_its_Order_amount/)) {
+		YAHOO.util.Event.addListener(htmlId, 'change', computeAllotment)
+	}
+}
+
+//template_x002e_formPortlet_x002e_standalonecreateform_prop_Requisition_ch_unog_dcm_oime_its_Order_amount
+//template_x002e_create-content_x002e_create-content_prop_Requisition_ch_unog_dcm_oime_its_Order_amount
+var SIDE = SIDE || {};
+SIDE.FORM_PREFIX = "template_x002e_formPortlet_x002e_standalonecreateform";
+SIDE.DIRECT_PREFIX = "template_x002e_create-content_x002e_create-content";
+
+//var prop = "prop_Requisition_ch_unog_dcm_oime_its_Order_amount";
+SIDE.getElementById = function(prop) {
+	var elt = YAHOO.util.Dom.get(SIDE.FORM_PREFIX + "_" + prop);
+	if (elt) {
+		return elt;
+	} else {
+		elt = YAHOO.util.Dom.get(SIDE.DIRECT_PREFIX + "_" + prop);
+		if (elt) {
+			return elt;
+		}
+	}
+}
+
+SIDE.getFloatById = function(prop) {
+	var a = parseFloat(SIDE.getElementById(prop).value);
+	return a;
+}
+
+//var prop = "prop_Requisition_ch_unog_dcm_oime_its_Order_amount";
+SIDE.getElementId = function(prop) {
+	return SIDE.getElementById(prop).id;
+}
+
+var allotment = null;
+var expended = null;
+
+var updateAllotment = function(e) {
+	allotment = e;
+	computeAllotment();
+};
+
+var updateExpended = function(e) {
+	expended = e;
+	computeAllotment();
+};
+
+function computeAllotment() {
+	if (allotment && expended) {
+		SIDE.getElementById("Requisition_ch_unog_dcm_oime_its_Order_balance").value =
+			SIDE.getFloatById("Requisition_ch_unog_dcm_oime_its_Order_allotment")
+			+ SIDE.getFloatById("Requisition_ch_unog_dcm_oime_its_Order_expended");
+		SIDE.getElementById("Requisition_ch_unog_dcm_oime_its_Order_committed").value =
+			SIDE.getFloatById("prop_Requisition_ch_unog_dcm_oime_its_Order_amount");
+		SIDE.getElementById("Requisition_ch_unog_dcm_oime_its_Order_available").value =
+			SIDE.getFloatById("Requisition_ch_unog_dcm_oime_its_Order_balance")
+			- SIDE.getFloatById("Requisition_ch_unog_dcm_oime_its_Order_committed");
+	}
+}
+
+var RequisitionDT = RequisitionDT || {
+
+	formatCurrency: function (value) {
+		return YAHOO.util.Number.format(value,{prefix:'$',decimalPlaces:2,thousandsSeparator:','});
+	},
+
+	computeTotal: function(oArgs, self) {
+		var elCell = oArgs.editor.getTdEl();
+		var oOldData = oArgs.oldData;
+		var oNewData = oArgs.newData;
+
+		var elRow = self.getTrEl(elCell);
+		var record = self.getRecord(elRow);
+		var totalPrice = record.getData("quantity") * record.getData("unitPrice");
+		record.setData("totalPrice", totalPrice);
+		var el = self.getTdLinerEl(elRow.cells[4]);
+		el.innerHTML = RequisitionDT.formatCurrency(record.getData("totalPrice"));
+
+		this.dataReady.fire(self.getRecordSet());
+		computeAllotment();
+	},
+
+    dataReady: new YAHOO.util.CustomEvent("dataReady", this)
+}

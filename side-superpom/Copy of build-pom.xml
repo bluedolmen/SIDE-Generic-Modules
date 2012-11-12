@@ -1,0 +1,105 @@
+<!--
+	This build file is used by SIDE share modules to build
+	the corresponding jar file
+-->
+<project name="deploy" default="run">
+	<property file="${user.home}/build.properties" />
+	<property file="${basedir}/../../../build.${user.name}.properties" />
+	<property file="${basedir}/../../../deployer.side.properties" />
+	<property file="build.${user.name}.properties" />
+
+	<property name="root_dir" value="."/>
+
+	<target name="run">
+		<echo message="Using maven to package content..." />
+		<property name="module.id" value="${project.artifactId}"/>
+		<property name="module.version" value="${project.version}"/>
+
+		<echo message="Creating ${module.id}-${module.version}.jar archive" />
+
+		<zip destfile="target/${module.id}-${module.version}.jar">
+			<fileset dir="target/${module.id}-${module.version}/WEB-INF/classes">
+				<include name="**/*" />
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="integration-test" depends="deploy"/>
+
+	<target name="package-simple-share-module">
+		<echo message="Using maven to package content..." />
+		<property name="module.id" value="${project.artifactId}"/>
+		<property name="module.version" value="${project.version}"/>
+
+		<echo message="Creating ${module.id}-${module.version}.jar archive" />
+
+		<zip destfile="target/${module.id}-${module.version}.jar">
+			<fileset dir="target/${module.id}-${module.version}/WEB-INF/classes">
+				<include name="**/*" />
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="package-modules">
+		<!--
+			We could concatenate a common prefix/suffix so they are easily
+			found when administering the machine
+		-->
+		<echo message="Using maven to pre-package a set of modules..." />
+
+		<property name="module.id" value="${project.artifactId}"/>
+		<property name="module.version" value="${project.version}"/>
+
+		<echo message="Exploring target/${module.id}-${module.version}/lib directory to find dependencies" />
+
+		<fileset dir="." id="jars">
+			<include name="target/${module.id}-${module.version}/lib/*.jar"/>
+<!--
+	<include name="target/${module.id}—${module.version}/lib/*.jar"/>
+-->
+		</fileset>
+
+		<echo message="Copying jars directly into 'target' directory"/>
+		<copy todir="target" flatten="true">
+			<fileset refid="jars"/>
+		</copy>
+	</target>
+
+	<target name="deploy"
+			depends="deploy-alfresco-jars,deploy-share-jars">
+	</target>
+
+	<target name="deploy-alfresco-jars">
+		<echo message="Deploying jars into alfresco"/>
+
+		<property name="root_dir" value="${moduleId}"/>
+		<echo message="root_dir = ${maven.project.name}"/>
+
+		<fileset dir="." id="alfresco-jars">
+			<exclude name="${root_dir}/target/*-classes.jar"/>
+			<exclude name="${root_dir}/target/*.zip"/>
+			<include name="side-workflow-*/target/*.jar"/>
+		</fileset>
+
+		<copy todir="${alfresco.webapp.dir}/WEB-INF/lib" flatten="true" verbose="true">
+			<fileset refid="alfresco-jars"/>
+		</copy>
+	</target>
+
+	<target name="deploy-share-jars">
+		<echo message="Deploying jars into share"/>
+
+		<fileset dir="." id="share-jars">
+			<exclude name="${root_dir}/target/*-classes.jar"/>
+			<exclude name="${root_dir}/target/*.zip"/>
+			<exclude name="side-workflow-*/target/*.jar"/>
+			<include name="${root_dir}/target/*.jar"/>
+		</fileset>
+
+		<copy todir="${alfresco.share.webapp.dir}/WEB-INF/lib" flatten="true" verbose="true">
+			<fileset refid="share-jars"/>
+		</copy>
+
+	</target>
+
+</project>

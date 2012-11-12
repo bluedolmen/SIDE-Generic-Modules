@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+    <artifactId>Requisition</artifactId>
+    <groupId>side.project</groupId>
+    <version>1.0</version>
+  </parent>
+	<groupId>org.sidelabs</groupId>
+	<artifactId>side-js-alfresco</artifactId>
+	<packaging>amp</packaging>
+	<name>side-js-alfresco</name>
+	<version>1.0.0</version>
+	<description>this is a new Amp project generated using	"com.bluexml.side.Integration.m2.ampArchetype" thanks to change this description</description>
+	<properties>
+		<env>local</env>
+		<config.target.path>alfresco/module/SIDE_side-js-alfresco</config.target.path>
+		<!-- Webapp used to test/develop locally the AMP -->
+		<webapp.name>SIDE_side-js-alfresco-webapp</webapp.name>
+
+		<alfresco.data.location>./alf_data_jetty</alfresco.data.location>
+		<alfresco.db.name>alf_jetty</alfresco.db.name>
+		<alfresco.db.username>alfresco</alfresco.db.username>
+		<alfresco.db.password>alfresco</alfresco.db.password>
+		<webapp.log.level>error</webapp.log.level>
+		<!-- End of testing webapp specific properties -->
+		<!-- Module specific build time properties -->
+		<module.log.level>warn</module.log.level>
+	</properties>
+	<!-- need to list these as a provided so that Maven doesn't download them
+		and include them in the AMP, they are provided by Alfresco -->
+	<dependencies>
+		<!-- Alfresco -->
+		<dependency>
+			<groupId>org.alfresco</groupId>
+			<artifactId>alfresco-core</artifactId>
+			<version>4.0.d</version>
+			<classifier>community</classifier>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.alfresco</groupId>
+			<artifactId>alfresco-repository</artifactId>
+			<version>4.0.d</version>
+			<scope>provided</scope>
+			<classifier>community</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.alfresco</groupId>
+			<artifactId>alfresco-data-model</artifactId>
+			<version>4.0.d</version>
+			<classifier>community</classifier>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.alfresco</groupId>
+			<artifactId>alfresco-remote-api</artifactId>
+			<version>4.0.d</version>
+			<classifier>community</classifier>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Alfresco deps -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>2.4.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- SURF -->
+		<dependency>
+			<groupId>org.springframework.extensions.surf</groupId>
+			<artifactId>spring-webscripts</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.0.5.RELEASE</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Don't add here amp dependencies as it will break amp packaging -->
+	</dependencies>
+	<!-- The scm is required for the buildnumber-maven-plugin which is required
+		for AMP version numbering -->
+	<scm>
+		<connection>scm:svn:http://domain.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://${maven.username}@domain.com/svn/trunk/</developerConnection>
+		<url>http://domain.com/svn/trunk/</url>
+	</scm>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>create</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<revisionOnScmFailure>${project.version}</revisionOnScmFailure>
+					<doCheck>false</doCheck>
+					<doUpdate>false</doUpdate>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.bluexml.side.Integration.m2</groupId>
+				<artifactId>ampMojo</artifactId>
+				<version>1.0.15</version>
+				<extensions>true</extensions>
+				<configuration>
+					<dependentAmpExcludes>**</dependentAmpExcludes>
+					<dependentAmpIncludes></dependentAmpIncludes>
+					<attachClasses>true</attachClasses>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+					<overlays></overlays>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <version>1.7</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+			            <configuration>
+							<target>
+								<ant antfile="../build-pom-locally.xml" target="package"/>
+							</target>
+			        	</configuration>
+						<goals>
+							<goal>run</goal>
+			            </goals>
+			        </execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <version>1.7</version>
+				<executions>
+					<execution>
+						<phase>integration-test</phase>
+			            <configuration>
+							<target>
+								<ant antfile="../build-pom-locally.xml" target="deploy-alfresco-jars"/>
+							</target>
+			        	</configuration>
+						<goals>
+							<goal>run</goal>
+			            </goals>
+			        </execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<!-- Copies and filters resources in build folder so maven-amp-plugin can
+			pick them up -->
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**README-*</exclude>
+				</excludes>
+			</resource>
+			<!-- Copies and filters AMP config in the proper package so to enforce
+				full module naming single sourcing from POM properties -->
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/config</directory>
+				<targetPath>${config.target.path}</targetPath>
+				<excludes>
+					<exclude>**README-*</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	</build>
+</project>

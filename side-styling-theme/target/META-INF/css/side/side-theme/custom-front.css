@@ -1,0 +1,31 @@
+/* default style must be present before specific style otherwise they will disappear */
+.site-icon {
+	background: url(http://www.bluexml.com/resources/icons/oxygen-icons/16x16/actions/quickopen-class.png) 0 0px no-repeat !important;
+}
+
+.site-icon-expense,
+.site-icon-test {
+	background: url(http://www.bluexml.com/resources/icons/oxygen-icons/16x16/actions/quickopen-class.png) 0 0px no-repeat !important;
+}
+
+#north-header {
+	background: url(http://localhost:8080/share/themes/sidelabs/images/logo-uno.png) 0 -30px no-repeat !important;
+	height: 50px;
+	padding: 5px;
+}
+
+#side-app-requisition {
+	float: left;
+	font-size: 1.5em;
+	color: white;
+	background: url(http://localhost:8080/share/themes/sidelabs/images/icon-procurement-2-22x22.png) 0px -2px no-repeat !important;
+	padding-left: 32px;
+}
+
+#side-app-leave {
+	float: left;
+	font-size: 1.5em;
+	color: white;
+	background: url(http://www.bluexml.com/resources/icons/oxygen-icons/22x22/actions/view-calendar-day.png) 0 0px no-repeat !important;
+	padding-left: 32px;
+}

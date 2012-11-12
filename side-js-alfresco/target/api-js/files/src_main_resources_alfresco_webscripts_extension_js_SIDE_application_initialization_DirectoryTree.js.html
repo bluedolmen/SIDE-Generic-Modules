@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src&#x2F;main&#x2F;resources&#x2F;alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;application&#x2F;initialization&#x2F;DirectoryTree.js - UNO &#x2F; Procurement Requisition Project</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="..&#x2F;assets/favicon.png">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;combo?3.5.1&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title="UNO &#x2F; Procurement Requisition Project"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bootstrap.html">Bootstrap</a></li>
+            
+                <li><a href="..&#x2F;classes/Config.html">Config</a></li>
+            
+                <li><a href="..&#x2F;classes/DirectoryTree.html">DirectoryTree</a></li>
+            
+                <li><a href="..&#x2F;classes/Group.html">Group</a></li>
+            
+                <li><a href="..&#x2F;classes/OrderFolder.html">OrderFolder</a></li>
+            
+                <li><a href="..&#x2F;classes/People.html">People</a></li>
+            
+                <li><a href="..&#x2F;classes/Person.html">Person</a></li>
+            
+                <li><a href="..&#x2F;classes/Remote.html">Remote</a></li>
+            
+                <li><a href="..&#x2F;classes/Rule.html">Rule</a></li>
+            
+                <li><a href="..&#x2F;classes/Start.html">Start</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/SIDE.Alfresco.Workflow.html">SIDE.Alfresco.Workflow</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.initialization.html">SIDE.application.initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.requisition.bizrule.html">SIDE.application.requisition.bizrule</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.requisition.initialization.html">SIDE.application.requisition.initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.Initialization.html">SIDE.Initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.Procurement.html">SIDE.Procurement</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src&#x2F;main&#x2F;resources&#x2F;alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;application&#x2F;initialization&#x2F;DirectoryTree.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;base.js&quot;&gt;
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;util&#x2F;Logger.js&quot;&gt;
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Helper&#x2F;Search.js&quot;&gt;
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Helper&#x2F;Folder.js&quot;&gt;
+
+SIDE.define(&quot;SIDE.application.initialization.DirectoryTree&quot;);
+
+&#x2F;**
+ * This class creates the directory structure in the baseDir. In parallel,
+ * the corresponding groups are created and the permissions indicated
+ * in the folders attribute are assigned.
+ *
+ * Requirement: Provided base groups must be created so nested groups
+ * can be initialized correctly.
+ *
+ * @class 		DirectoryTree
+ * @module 		SIDE.Initialization
+ * @submodule 	SIDE.application.initialization
+ * @author 		Jean-Christophe Kermagoret
+ * @constructor
+ *
+ * @TODO nested group = inheritance?
+ * @TODO Groups are created at a global level and so should be prepended by
+ * the site short name
+ * @TODO The &#x27;_&#x27; char is used as a separator in group names which are based
+ * on directories&#x27; names. This means it&#x27;s not possible to have &#x27;_&#x27; in path
+ * which is not a good idea. The &#x27;_&#x27; should be doubled to reduce future
+ * problems
+ *&#x2F;
+SIDE.application.initialization.DirectoryTree = function(baseDir, tree, folders, applicationGroups) {
+	this.baseDir = baseDir;
+	this.tree = tree;
+	this.folders = folders;
+	this.groups = applicationGroups; &#x2F;&#x2F; Those used by the workflow
+};
+
+&#x2F;**
+ * Initializes the organization browsing
+ *
+ * @method initialize
+ * @returns {boolean}
+ *&#x2F;
+SIDE.application.initialization.DirectoryTree.prototype.initialize = function() {
+  var result = true;
+  for (childIdx in this.tree) {
+    &#x2F;&#x2F; We are processing direct children only
+    var child = this.tree[childIdx];
+    logger.log(&quot;Child name is: &quot; + child.name);
+
+    var parentPath = this.baseDir;
+    &#x2F;&#x2F;var parentPath = &quot;&#x2F;app:company_home&#x2F;st:sites&#x2F;cm:test&#x2F;cm:documentLibrary&quot;;
+    &#x2F;&#x2F;var rootPath =  baseDir + &quot;&#x2F;cm:&quot; + search.ISO9075Encode(child.name);
+    var rootPath =  parentPath + &quot;&#x2F;cm:&quot; + child.name;
+    logger.log(&quot;Looking for root: &quot; + rootPath);
+
+    var nodes = SIDE.Alfresco.Helper.Folder.findOrCreateIfNotExists(rootPath);
+    if (nodes.length &gt; 0) {
+      var baseGroupName = this.convertPathToGroupName(rootPath);
+      people.createGroup(baseGroupName);
+      nodes[0].setPermission(&quot;Read&quot;,&quot;GROUP_&quot; + baseGroupName);
+      &#x2F;&#x2F; We immediately set inherits permissions to false
+      &#x2F;&#x2F; We are in an explicit strategy
+      nodes[0].setInheritsPermissions(false);
+
+      this.browse(nodes[0], child, parentPath + &quot;&#x2F;cm:&quot; + nodes[0].name);
+    } else {
+      logger.log(&quot;root doesn&#x27;t seem to exist and it seems there is a problem to create it. Can&#x27;t go further. Sorry.&quot;);
+      result = false;
+    }
+  }
+
+  return result;
+}
+
+&#x2F;**
+ * Recursely browses the soft directory (corresponding to the organization)
+ * and creates the real one in the same time. Once the soft directory hasn&#x27;t
+ * any more children, the application groups, folders and permissions are
+ * set.
+ *
+ * Note that organization groups is just a structure which isn&#x27;t in any ways
+ * related to the formal idea of an entity. Your soft directory is simply
+ * a tree!
+ *
+ * @method	browse
+ * @param 	{nodeRef} hardDirectory the existing parent
+ * @param 	{nodeRef} softDirectory the current object in the organization&#x27;s
+ * structure
+ * @param 	{String} path
+ * @returns
+ *&#x2F;
+SIDE.application.initialization.DirectoryTree.prototype.browse = function (hardDirectory, softDirectory, path) {
+  SIDE.util.Logger.log(&quot;Browsingfolders&quot;);
+
+  logger.log(&quot;Entering Browse function&quot;);
+  logger.log(&quot;* path = &quot; + path);
+  if (softDirectory.children.length == 0) {
+    &#x2F;&#x2F; No children. We can start creating final folders and set permissions
+    &#x2F;&#x2F; We first create application final groups
+
+    this.createApplicationFinalGroups(path)
+    this.createFolders(hardDirectory);
+    this.createPermissions(hardDirectory, path);
+    logger.log(&quot;Permissions have been set.&quot;);
+    return softDirectory;
+  } else {
+    for (f in softDirectory.children) {
+      var child = softDirectory.children[f];
+      logger.log(&quot;Looking for the -&quot; + path + &quot;&#x2F;cm:&quot; + child.name + &quot;- folder.&quot;);
+
+&#x2F;&#x2F;      getFolderAndBrowseIt(hardDirectory, child, path + &quot;&#x2F;cm:&quot; + hardDirectory.name);
+      var nodes = SIDE.Alfresco.Helper.Folder.findOrCreateIfNotExists(path + &quot;&#x2F;cm:&quot; + child.name);
+      if (nodes != null &amp;&amp; nodes != undefined &amp;&amp; nodes.length &gt; 0) {
+
+        var baseGroupName = this.convertPathToGroupName(path + &quot;&#x2F;cm:&quot; + nodes[0].name);
+        var parentGroupName = baseGroupName.replace(&#x2F;_[^_]*$&#x2F;g,&quot;&quot;);
+        logger.log(&quot;******** parentGroupName: &quot; + parentGroupName);
+
+        try {
+        	people.createGroup(baseGroupName);
+        } catch (e) {
+        	logger.log(baseGroupName + &quot; already exists.&quot;);
+        	logger.log(e);
+        }
+
+        try {
+        	people.addAuthority(
+        			people.getGroup(&quot;GROUP_&quot; + parentGroupName),
+        			people.getGroup(&quot;GROUP_&quot; + baseGroupName)
+        	);
+        } catch (e) {
+        	logger.log(baseGroupName + &quot; can&#x27;t be included in parentGroupName. Does it exist?&quot;);
+        	logger.log(e);
+        }
+
+        nodes[0].setPermission(&quot;Read&quot;,&quot;GROUP_&quot; + baseGroupName);
+        nodes[0].setInheritsPermissions(false);
+        logger.log(nodes[0].permissions);
+
+        this.browse(nodes[0], child, path + &quot;&#x2F;cm:&quot; + nodes[0].name);
+      } else {
+        logger.log(path + &quot;&#x2F;cm:&quot; + child.name + &quot; doesn&#x27;t seem to exist and it seems there is a problem to create it. Can&#x27;t go further. Sorry.&quot;);
+      }
+    }
+  }
+}
+
+&#x2F;**
+Creates the permissions for the provided parent.
+
+#### Directories&#x27; permissions
+
+Permissions are created as a set of russian dolls. Imagine the
+following directory structure:
+
+	ACME
+	  HR
+	    Staffing
+	    Training
+	  Financial
+	    Payroll
+	    Accounting
+
+Permissions will be created as a flattened structure:
+
+	ACME
+	ACME_HR
+	ACME_HR_Staffing
+	...
+	ACME_Financial_Payroll
+	...
+
+And each group includes all the groups that start with its name. So:
+
+	ACME includes ACME_HR and ACME_Financial
+	ACME_HR includes ACME_HR_Staffing and ACME_HR_Training
+	ACME_Financial includes ACME_Financial_Payroll and ACME_Financial_Accounting
+
+From a security point of view, this way to manage permissions allows to
+prevent users to browse directories not corresponding to those they
+are not membership of. Explicit permissions are preferred to inheritance which may be dangerous
+because of implicit behavior. In security, explicit rules can be viewed like
+everything is denied by default.
+
+#### Application permissions
+
+This part tries to implement this kind of security matrix.
+
+Beside this basic permission structure, you can refine it at the leaves
+level with more appropriate basic rights corresponding to your application
+requirements. The following rights are generated:
+
+	NA: Nothing Available
+	RO: Read Only
+
+Else if you are a Drafter, you have Read&#x2F;Write&#x2F;CreateChildren (kind of RWC).
+Otherwise you have Read rights (Kind of RO)
+
+@method 	createPermissions
+@param 	{nodeRef} parent is the directory for which permissions are going
+to be created.
+@param 	{String} path is the complete path corresponding to the parent
+It should normally be deduced from the parent but a bug (?) prevented me to
+achieve it, so I needed this path. Don&#x27;t forget to update the doc if parent
+is enough.
+@returns
+*&#x2F;
+SIDE.application.initialization.DirectoryTree.prototype.createPermissions = function(parent, path) {
+  var baseGroupName = this.convertPathToGroupName(path);
+
+  SIDE.util.Logger.log(&quot;Setting permissions for &quot; + baseGroupName + &quot; group on &quot; + parent.name);
+
+  for (j in this.folders) {
+    var currentFolderName = this.folders[j][&quot;name&quot;];
+    logger.log(&quot;=================================&quot;);
+    logger.log(&quot;Setting permissions on &quot; + currentFolderName + &quot;\n&quot;);
+
+    var currentFolder = SIDE.Alfresco.Helper.Search.findByChildName(currentFolderName, parent);
+    var groupAndPerms = this.folders[j][&quot;permissions&quot;];
+    if (currentFolder != null &amp;&amp; currentFolder != undefined) {
+      currentFolder.setInheritsPermissions(false);
+
+      for (i in groupAndPerms) {
+        var gap = groupAndPerms[i];
+        logger.log(&quot;groupAndPerm value: &quot; + gap);
+        if (gap.indexOf(&quot;_RO&quot;) &gt; -1) {
+            &#x2F;&#x2F; RO permissions set (Consumer == RO)
+            var groupName = baseGroupName + &quot;_&quot; + gap.replace(&#x2F;_RO$&#x2F;g,&quot;&quot;);
+            currentFolder.setPermission(&quot;Read&quot;, &quot;GROUP_&quot; + groupName);
+            logger.log(gap + &quot;: Adds Read permission for -&quot; + groupName + &quot;- group on -&quot; + currentFolder.name + &quot;- folder.&quot;);
+        } else if (gap.indexOf(&quot;_NA&quot;) &gt; -1) {
+            var groupName = baseGroupName + &quot;_&quot; + gap.replace(&#x2F;_NA$&#x2F;g,&quot;&quot;);
+            &#x2F;&#x2F; NA permission which means nothing at all is accessible
+            &#x2F;&#x2F; currentFolder.setInheritsPermissions(false);
+            &#x2F;&#x2F;currentFolder.removePermission(&quot;SiteConsumer&quot;, &quot;GROUP_&quot; + gap);
+            logger.log(gap + &quot;: Removes READ permission for -&quot; + groupName + &quot;- group on -&quot; + currentFolder.name + &quot;- folder and sets inherits = false.&quot;);
+        } else if (gap.indexOf(&quot;Drafters&quot;) &gt; -1) {
+            &#x2F;&#x2F; Drafters. RW permission which means:
+            &#x2F;&#x2F; * Collaborator rights for Drafters: they can update and create folders
+            var groupName = baseGroupName + &quot;_&quot; + gap;
+            currentFolder.setPermission(&quot;Read&quot;, &quot;GROUP_&quot; + groupName);
+            currentFolder.setPermission(&quot;Write&quot;, &quot;GROUP_&quot; + groupName);
+            currentFolder.setPermission(&quot;CreateChildren&quot;, &quot;GROUP_&quot; + groupName);
+            logger.log(gap + &quot;: Adds Write and Create Children permission for -&quot; + groupName + &quot;- group on -&quot; + currentFolder.name + &quot;- folder.&quot;);
+        } else {
+            &#x2F;&#x2F; FRO, SRO, EO
+            &#x2F;&#x2F; * Contributor rights for FRO&#x2F;SRO&#x2F;EO
+            var groupName = baseGroupName + &quot;_&quot; +gap;
+            currentFolder.setPermission(&quot;Read&quot;, &quot;GROUP_&quot; + groupName);
+            currentFolder.setPermission(&quot;Write&quot;, &quot;GROUP_&quot; + groupName);
+            logger.log(gap + &quot;: Adds Write permission for -&quot; + groupName + &quot;- group on -&quot; + currentFolder.name + &quot;- folder&quot;);
+        }
+
+        &#x2F;&#x2F; @TODO A SIDE.util.Logger.dump(&quot;sep&quot;) would be interesting
+        var permStrings = currentFolder.permissions.toString().split(&quot;,&quot;);
+        for (p in permStrings) {
+          logger.log(&quot;* &quot; + permStrings[p]);
+        }
+        logger.log(&quot;&quot;);
+      }
+    }
+  }
+}
+
+&#x2F;**
+ * Creates the folders provided during DirectoryTree instanciation. This
+ * corresponds to leaves in the directory tree.
+ *
+ * @method 	createFolder
+ * @param 	{Object} parent is the directory under which will be created
+ * the folders
+ * @returns
+ *&#x2F;
+SIDE.application.initialization.DirectoryTree.prototype.createFolders = function(parent) {
+  SIDE.util.Logger.log(&quot;Creating following folders into &quot; + parent.name + &quot; root.&quot;);
+
+  for (j in this.folders) {
+    &#x2F;&#x2F; Switch beetween folder definition to alternate behavior
+    &#x2F;&#x2F;var folder = folders[j];
+    var folder = this.folders[j][&quot;name&quot;];
+    logger.log(&quot;Creating &quot; + folder);
+    try {
+      var child = parent.createFolder(folder);
+      logger.log(child.name + &quot; created\n&quot;);
+    } catch (e) {
+      logger.log(e + &quot;\n* &quot; + folder + &quot; can&#x27;t be created because it already exists.\n&quot;);
+    }
+  }
+}
+
+&#x2F;**
+ * Creates the application groups for the current parent corresponding
+ * to directory leaves
+ *
+ * @method createApplicationFinalGroups
+ * @returns
+*&#x2F;
+SIDE.application.initialization.DirectoryTree.prototype.createApplicationFinalGroups = function(parent) {
+  var baseGroupName = this.convertPathToGroupName(parent);
+
+  for (grp in this.groups) {
+	  logger.log(&quot;Creating -&quot; + baseGroupName + &quot;_&quot; + grp + &quot;- group.&quot;);
+
+	  try {
+		  people.createGroup(baseGroupName + &quot;_&quot; + grp);
+	  } catch (e) {
+		  logger.log(e);
+	  }
+
+	  logger.log(&quot;-&quot; + baseGroupName + &quot;- group includes -&quot; + baseGroupName + &quot;_&quot; + grp  +&quot;.&quot;);
+	  try {
+		  people.addAuthority(
+			  people.getGroup(&quot;GROUP_&quot; + baseGroupName),
+			  people.getGroup(&quot;GROUP_&quot; + baseGroupName + &quot;_&quot; + grp)
+		  );
+	  } catch (e) {
+		  logger.log(e);
+	  }
+
+	  logger.log(&quot;-&quot; + grp + &quot;- group includes -&quot; + baseGroupName + &quot;_&quot; + grp  +&quot;.&quot;);
+	  try {
+		  people.addAuthority(
+			  people.getGroup(&quot;GROUP_&quot; + grp),
+			  people.getGroup(&quot;GROUP_&quot; + baseGroupName + &quot;_&quot; + grp)
+		  );
+	  } catch (e) {
+		  logger.log(e);
+	  }
+  }
+}
+
+&#x2F;**
+ * Converts path to a group name by removing all the Alfresco Share site
+ * part (documentLibrary included). In fact, Group name corresponds to the relative
+ * part of the path in a Share site from a user point of view.
+ *
+ *&#x2F;
+SIDE.application.initialization.DirectoryTree.prototype.convertPathToGroupName = function(path) {
+  var baseGroupName = path.replace(&#x2F;^.*documentLibrary&#x2F;g,&quot;&quot;);
+  baseGroupName = baseGroupName.replace(&#x2F;\&#x2F;[^:]*:&#x2F;g,&quot;_&quot;);
+  baseGroupName = baseGroupName.replace(&#x2F;^_&#x2F;g,&quot;&quot;);
+
+  return baseGroupName;
+}
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

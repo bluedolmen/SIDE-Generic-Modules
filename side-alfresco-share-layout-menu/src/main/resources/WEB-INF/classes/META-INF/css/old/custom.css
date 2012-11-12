@@ -1,0 +1,50 @@
+
+/* The following rule will set this width for each .form-field input element */
+.form-container .form-field input {
+	/*width: 20em;*/
+}
+
+
+.yui-skin-default .yui-navset .yui-content {
+	background-color: invert;
+}
+
+#template_x002e_formPortlet_x002e_standalonecreateform-form-fields
+{
+
+}
+
+.share-form .form-container .form-fields
+{
+	border: none !important; /* the original is also important :-( */
+	/*background-color: #c8c8e2;*/
+}
+
+
+/* workflow */
+.set .set-title {
+	border-bottom-color: grey;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#default_Document_mainId_newGroupId_senderId .set-panel-heading {
+	background-image: url("http://www.side-labs.org/resources/icons/crystal/32x32/actions/edit_group.png");
+    background-repeat: no-repeat;
+    padding-left: 45px;
+}
+
+.set-panel-heading {
+	font-size: 1.5em;
+}
+
+.set-bordered-panel-heading {
+	color: navy !important;
+	font-family: arial,times new roman, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	text-align: center;
+	background-color:#c8c8e4 !important;
+	line-height: 18px;
+}

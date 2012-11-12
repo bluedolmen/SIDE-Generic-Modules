@@ -1,0 +1,14 @@
+.inputEx-DDList-item{background-color:#F0F0F0!important;border:0!important;border-bottom:1px solid #BBB!important;}
+.inputEx-DDList-item a{float:left!important;text-replace:"remove" "x"!important;}
+div.inputEx-Field select{min-width:150px;max-width:200px;}
+.form-container .form-field input.time-entry{width:40px;}
+.form-container .form-field input.date-entry{width:60px;}
+.share-form .form-container .caption{padding:1em 1em 0!important;min-width:50px;width:auto;float:right;}
+.share-form .form-container .form-fields{padding:1em 1em 0!important;min-width:400px;width:auto;}
+.form-container label{display:inline!important;float:left;text-align:right;width:8em;margin-right:1em;margin-top:.4em;text-transform:capitalize;}
+#default_Document_historyId label{width:250px;}
+.form-container .form-field input{width:15em;margin-bottom:none;}
+.form-container .date-format{margin-left:15em!important;}
+.form-container .help-text{margin-left:11.7em;}
+.form-container .form-field{min-width:269px;margin-bottom:.2em!important;}
+.object-finder .show-picker{display:inline!important;}

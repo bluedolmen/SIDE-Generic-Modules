@@ -1,0 +1,826 @@
+{
+    "project": {
+        "name": "UNO / Procurement Requisition Project",
+        "description": "Procurement Requisition Project",
+        "version": "0.9.0",
+        "url": "http://conf-side:8080/share"
+    },
+    "files": {
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Workflow/Start.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Workflow/Start.js",
+            "modules": {},
+            "classes": {
+                "Start": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Group.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Group.js",
+            "modules": {
+                "SIDE.Alfresco": 1
+            },
+            "classes": {
+                "Group": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/People.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/People.js",
+            "modules": {},
+            "classes": {
+                "People": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Person.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Person.js",
+            "modules": {},
+            "classes": {
+                "Person": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Remote.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Remote.js",
+            "modules": {},
+            "classes": {
+                "Remote": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Rule.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Rule.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "modules": {},
+            "classes": {
+                "Bootstrap": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "modules": {},
+            "classes": {
+                "DirectoryTree": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder-Spec.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder-Spec.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder.js",
+            "modules": {},
+            "classes": {
+                "OrderFolder": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "modules": {},
+            "classes": {
+                "Config": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Rule.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Rule.js",
+            "modules": {},
+            "classes": {
+                "Rule": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "SIDE.Alfresco": {
+            "name": "SIDE.Alfresco",
+            "submodules": {
+                "SIDE.Alfresco.Workflow": 1
+            },
+            "classes": {
+                "Start": 1,
+                "Group": 1,
+                "People": 1,
+                "Person": 1,
+                "Remote": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Remote.js",
+            "line": 3,
+            "description": "This module provides helpers to make use of Alfresco features easier.\nIn a near future, these helpers may augment native Alfresco classes\nso its use is transparent for developers and can be integrated into\nexisting applications without breaking anything.",
+            "author": "Jean-Christophe Kermagoret"
+        },
+        "SIDE.Alfresco.Workflow": {
+            "name": "SIDE.Alfresco.Workflow",
+            "submodules": {},
+            "classes": {
+                "Start": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "SIDE.Alfresco",
+            "namespace": "",
+            "description": "This library provides helper functions to dynamically create all kind of\nworkflow start script. A rule will generally be created later to call\nthis script.",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Workflow/Start.js",
+            "line": 5
+        },
+        "SIDE.Initialization": {
+            "name": "SIDE.Initialization",
+            "submodules": {
+                "undefined": 1,
+                "SIDE.application.initialization": 1,
+                "SIDE.application.requisition.initialization": 1
+            },
+            "classes": {
+                "Config": 1,
+                "Rule": 1,
+                "Bootstrap": 1,
+                "DirectoryTree": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 5
+        },
+        "SIDE.application.initialization": {
+            "name": "SIDE.application.initialization",
+            "submodules": {},
+            "classes": {
+                "Bootstrap": 1,
+                "DirectoryTree": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "SIDE.Initialization",
+            "namespace": "",
+            "description": "This class contains all the initialization data to bootstrap\na complete Requisition application. It's the generic part.",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "line": 8
+        },
+        "SIDE.Procurement": {
+            "name": "SIDE.Procurement",
+            "submodules": {
+                "SIDE.application.requisition.bizrule": 1
+            },
+            "classes": {
+                "OrderFolder": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder.js",
+            "line": 5
+        },
+        "SIDE.application.requisition.bizrule": {
+            "name": "SIDE.application.requisition.bizrule",
+            "submodules": {},
+            "classes": {
+                "OrderFolder": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "SIDE.Procurement",
+            "namespace": "",
+            "description": "Creates a folder with the name of the provided file.\n\nOther bizrules should have been put here instead of generating them\nor importing them through the 'side' Alfresco Share site",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder.js",
+            "line": 5
+        },
+        "SIDE.application.requisition.initialization": {
+            "name": "SIDE.application.requisition.initialization",
+            "submodules": {},
+            "classes": {
+                "Rule": 1,
+                "Config": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "SIDE.Initialization",
+            "namespace": "",
+            "description": "This class creates Alfresco Rules required by the Procurement application:\n\n* a rule to launch workflow automaticallyinitWorkflowStartScriptCreation();\n* a rule to fill pdf with Order metadata\n* a rule to create a directory from a freshly created Order, so the user\nmay add some attachments",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 5
+        }
+    },
+    "classes": {
+        "Start": {
+            "name": "Start",
+            "shortname": "Start",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Alfresco",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Workflow/Start.js",
+            "line": 5,
+            "description": "This library provides helper functions to dynamically create all kind of\nworkflow start script. A rule will generally be created later to call\nthis script.",
+            "author": "Jean-Christophe Kermagoret",
+            "submodule": "SIDE.Alfresco.Workflow",
+            "params": [
+                {
+                    "name": "workflowName",
+                    "description": "\"jbpm$wfbxRequisition:Requisition\"",
+                    "type": "String"
+                },
+                {
+                    "name": "description",
+                    "description": "\"Please review this PR: \"",
+                    "type": "String"
+                },
+                {
+                    "name": "delay",
+                    "description": "7",
+                    "type": "Int"
+                }
+            ]
+        },
+        "Group": {
+            "name": "Group",
+            "shortname": "Group",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Alfresco",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Group.js",
+            "line": 15,
+            "description": "This class provides helpers to make Alfresco group\nmanagement easier. To augment group native Alfresco\nshould be a good idea.",
+            "static": 1
+        },
+        "People": {
+            "name": "People",
+            "shortname": "People",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Alfresco",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/People.js",
+            "line": 5,
+            "description": "This is a test to augment through people renaming in peopleAlfresco and\npeople inheriting from it\nhttps://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/NoSuchMethod",
+            "author": "Jean-Christophe Kermagoret",
+            "static": 1
+        },
+        "Person": {
+            "name": "Person",
+            "shortname": "Person",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Alfresco",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Person.js",
+            "line": 5,
+            "description": "This class is a very light design of the Person concept\nIdeally, it should have augmented the person object provided by Alfresco\nbut it doesn't seem to be possible",
+            "author": "Jean-Christophe Kermagoret"
+        },
+        "Remote": {
+            "name": "Remote",
+            "shortname": "Remote",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Alfresco",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Remote.js",
+            "line": 3,
+            "description": "This class provides a wrapper around a native java class to execute\nremote web service call through whatever URL. This may be seen as\na security hole. Use at your own risk.",
+            "author": "Jean-Christophe Kermagoret"
+        },
+        "Rule": {
+            "name": "Rule",
+            "shortname": "Rule",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Initialization",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Rule.js",
+            "line": 11,
+            "description": "This class creates Alfresco Rules required by the Procurement application:\n\n* a rule to launch workflow automaticallyinitWorkflowStartScriptCreation();\n* a rule to fill pdf with Order metadata\n* a rule to create a directory from a freshly created Order, so the user\nmay add some attachments",
+            "params": [
+                {
+                    "name": "alfrescoServer",
+                    "description": "",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "http://localhost:8080/alfresco"
+                }
+            ],
+            "author": "Jean-christophe Kermagoret",
+            "submodule": "SIDE.application.requisition.initialization",
+            "static": 1,
+            "is_constructor": 1
+        },
+        "Bootstrap": {
+            "name": "Bootstrap",
+            "shortname": "Bootstrap",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Initialization",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 20,
+            "description": "This class contains all the initialization data to bootstrap\na complete Requisition application. It's the generic part.",
+            "submodule": "SIDE.application.initialization",
+            "is_constructor": 1
+        },
+        "DirectoryTree": {
+            "name": "DirectoryTree",
+            "shortname": "DirectoryTree",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Initialization",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "line": 8,
+            "description": "This class creates the directory structure in the baseDir. In parallel,\nthe corresponding groups are created and the permissions indicated\nin the folders attribute are assigned.\n\nRequirement: Provided base groups must be created so nested groups\ncan be initialized correctly.",
+            "submodule": "SIDE.application.initialization",
+            "author": "Jean-Christophe Kermagoret",
+            "is_constructor": 1,
+            "todo": [
+                "nested group = inheritance?",
+                "Groups are created at a global level and so should be prepended by\nthe site short name",
+                "The '_' char is used as a separator in group names which are based\non directories' names. This means it's not possible to have '_' in path\nwhich is not a good idea. The '_' should be doubled to reduce future\nproblems"
+            ]
+        },
+        "OrderFolder": {
+            "name": "OrderFolder",
+            "shortname": "OrderFolder",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Procurement",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder.js",
+            "line": 5,
+            "description": "Creates a folder with the name of the provided file.\n\nOther bizrules should have been put here instead of generating them\nor importing them through the 'side' Alfresco Share site",
+            "submodule": "SIDE.application.requisition.bizrule",
+            "author": "Jean-Christophe Kermagoret"
+        },
+        "Config": {
+            "name": "Config",
+            "shortname": "Config",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Initialization",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 5,
+            "description": "This class describes all the initialization data to bootstrap\na complete Procurement Requisition application. This part is specific\nto each application.",
+            "submodule": "SIDE.application.requisition.initialization"
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/People.js",
+            "line": 17,
+            "description": "All the methods available in the native people object are also available\nthrough the __noSuchMethod__ mechanism",
+            "itemtype": "method",
+            "name": "all",
+            "return": {
+                "description": "The returned native result"
+            },
+            "class": "People",
+            "module": "SIDE.Alfresco"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/People.js",
+            "line": 39,
+            "description": "This method is transmitted in a second time to the people object",
+            "itemtype": "method",
+            "name": "getPerson",
+            "class": "People",
+            "module": "SIDE.Alfresco"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Person.js",
+            "line": 43,
+            "description": "Based on http://www.techbits.de/2011/12/02/using-the-javascript-console-creating-users-with-avatar-images/",
+            "class": "Person",
+            "module": "SIDE.Alfresco"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Remote.js",
+            "line": 13,
+            "description": "The class may be used through instanciation if specific data is required:\n\n\tvar alfresco = new SIDE.Alfresco.Remote('http://localhost:8080/alfresco/service');\n\talfresco.call('/api/node/workspace/SpacesStore/' + folderId + '/ruleset/rules'\n\t\t\t\t\t\t+ '?alf_ticket=' + session.getTicket());\n\nor through static call if default data is ok:\n\n\tSIDE.Alfresco.Remote.call(\n\t\t'http://localhost:8080/alfresco/service'\n\t\t\t+ '/api/node/workspace/SpacesStore/' + folderId + '/ruleset/rules'\n\t\t\t+ '?alf_ticket=' + session.getTicket()\n\t);\n\nRequirement: extra-AlfrescoE4XUtil.jar from http://www.unorganizedmachines.com/site/software-and-technology/34-software-development/97-calling-web-services-from-alfresco-web-scripts",
+            "class": "Remote",
+            "module": "SIDE.Alfresco"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Rule.js",
+            "line": 23,
+            "itemtype": "method",
+            "name": "create",
+            "params": [
+                {
+                    "name": "alfrescoServer",
+                    "description": "",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "http://localhost:8080/alfresco"
+                }
+            ],
+            "author": "Jean-christophe Kermagoret",
+            "class": "Rule",
+            "module": "SIDE.Alfresco"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Rule.js",
+            "line": 44,
+            "static": 1,
+            "itemtype": "method",
+            "name": "base",
+            "params": [
+                {
+                    "name": "_id",
+                    "description": "If no id is provided, an random one will\nbe created",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "author": "Jean-christophe Kermagoret",
+            "class": "Rule",
+            "module": "SIDE.Alfresco"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Rule.js",
+            "line": 76,
+            "description": "Compare Property Value\noperation:= BEGINS|ENDS|CONTAINS",
+            "class": "Rule",
+            "module": "SIDE.Alfresco"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Rule.js",
+            "line": 119,
+            "description": "Action Rules Templates",
+            "class": "Rule",
+            "module": "SIDE.Alfresco"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 32,
+            "description": "Initializes the bootstrap process by creating all the required\nelements for a requisition application.",
+            "itemtype": "method",
+            "name": "init",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 42,
+            "description": "Base groups must exist before the directories' creation. Indeed,\nfinal directories from the site structure will be included into\nthese base groups.",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 52,
+            "description": "Users are created with an avatar if a people-username.png image\nis available somewhere in the Alfresco repository",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 58,
+            "description": "Users need to have SiteConsumer right on the application site\nin order to see it",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 64,
+            "description": "Users are not directly included into the application groups. They\nare included into the organization groups which are, in their turn,\nincluded into the application groups, corresponding to the ones\nused by the workflows.",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 76,
+            "description": "Creates the Alfresco Share site",
+            "itemtype": "method",
+            "name": "createSite",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 99,
+            "description": "Creates site structure",
+            "itemtype": "method",
+            "name": "createSiteStructure",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 125,
+            "description": "Creates the js script to start workflow for Requisition",
+            "itemtype": "method",
+            "name": "createWorkflowStartScript",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 144,
+            "description": "Creates rules for requisition application into the leaves of the\npreviously created directory structure",
+            "itemtype": "method",
+            "name": "createRules",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 154,
+            "description": "Creates users so you can play with the application directly",
+            "itemtype": "method",
+            "name": "createUsers",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 169,
+            "description": "Adds users in the groups used by the workflow. They are different from\nthe ones created for the directory structure which manage content access\nthrough a set of explicit permissions.",
+            "itemtype": "method",
+            "name": "addUsersInApplicationSiteGroup",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 190,
+            "description": "Creates groups used by the workflows. Without these groups, workflows\nare unusable.",
+            "itemtype": "method",
+            "name": "createApplicationGroups",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/Bootstrap.js",
+            "line": 205,
+            "description": "Adds users in organization groups so you can really access the data\nand use the application. Indeed, organization groups are included into\napplication groups so, by transitivity, you'll be able to manage the\nworkflow in relation with your membership.",
+            "itemtype": "method",
+            "name": "addUsersInOrganizationGroups",
+            "class": "Bootstrap",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "line": 37,
+            "description": "Initializes the organization browsing",
+            "itemtype": "method",
+            "name": "initialize",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "DirectoryTree",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "line": 75,
+            "description": "Recursely browses the soft directory (corresponding to the organization)\nand creates the real one in the same time. Once the soft directory hasn't\nany more children, the application groups, folders and permissions are\nset.\n\nNote that organization groups is just a structure which isn't in any ways\nrelated to the formal idea of an entity. Your soft directory is simply\na tree!",
+            "itemtype": "method",
+            "name": "browse",
+            "params": [
+                {
+                    "name": "hardDirectory",
+                    "description": "the existing parent",
+                    "type": "NodeRef"
+                },
+                {
+                    "name": "softDirectory",
+                    "description": "the current object in the organization's\nstructure",
+                    "type": "NodeRef"
+                },
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": ""
+            },
+            "class": "DirectoryTree",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "line": 148,
+            "description": "Creates the permissions for the provided parent.\n\n#### Directories' permissions\n\nPermissions are created as a set of russian dolls. Imagine the\nfollowing directory structure:\n\n\tACME\n\t  HR\n\t    Staffing\n\t    Training\n\t  Financial\n\t    Payroll\n\t    Accounting\n\nPermissions will be created as a flattened structure:\n\n\tACME\n\tACME_HR\n\tACME_HR_Staffing\n\t...\n\tACME_Financial_Payroll\n\t...\n\nAnd each group includes all the groups that start with its name. So:\n\n\tACME includes ACME_HR and ACME_Financial\n\tACME_HR includes ACME_HR_Staffing and ACME_HR_Training\n\tACME_Financial includes ACME_Financial_Payroll and ACME_Financial_Accounting\n\nFrom a security point of view, this way to manage permissions allows to\nprevent users to browse directories not corresponding to those they\nare not membership of. Explicit permissions are preferred to inheritance which may be dangerous\nbecause of implicit behavior. In security, explicit rules can be viewed like\neverything is denied by default.\n\n#### Application permissions\n\nThis part tries to implement this kind of security matrix.\n\nBeside this basic permission structure, you can refine it at the leaves\nlevel with more appropriate basic rights corresponding to your application\nrequirements. The following rights are generated:\n\n\tNA: Nothing Available\n\tRO: Read Only\n\nElse if you are a Drafter, you have Read/Write/CreateChildren (kind of RWC).\nOtherwise you have Read rights (Kind of RO)",
+            "itemtype": "method",
+            "name": "createPermissions",
+            "params": [
+                {
+                    "name": "parent",
+                    "description": "is the directory for which permissions are going\nto be created.",
+                    "type": "NodeRef"
+                },
+                {
+                    "name": "path",
+                    "description": "is the complete path corresponding to the parent\nIt should normally be deduced from the parent but a bug (?) prevented me to\nachieve it, so I needed this path. Don't forget to update the doc if parent\nis enough.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": ""
+            },
+            "class": "DirectoryTree",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "line": 265,
+            "description": "Creates the folders provided during DirectoryTree instanciation. This\ncorresponds to leaves in the directory tree.",
+            "itemtype": "method",
+            "name": "createFolder",
+            "params": [
+                {
+                    "name": "parent",
+                    "description": "is the directory under which will be created\nthe folders",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": ""
+            },
+            "class": "DirectoryTree",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "line": 291,
+            "description": "Creates the application groups for the current parent corresponding\nto directory leaves",
+            "itemtype": "method",
+            "name": "createApplicationFinalGroups",
+            "return": {
+                "description": ""
+            },
+            "class": "DirectoryTree",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/initialization/DirectoryTree.js",
+            "line": 332,
+            "description": "Converts path to a group name by removing all the Alfresco Share site\npart (documentLibrary included). In fact, Group name corresponds to the relative\npart of the path in a Share site from a user point of view.",
+            "class": "DirectoryTree",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/bizrule/OrderFolder-Spec.js",
+            "line": 1,
+            "description": "Creates a folder with the name of the provided file.",
+            "class": "OrderFolder",
+            "module": "SIDE.Initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 16,
+            "itemtype": "property",
+            "name": "application",
+            "type": "{Object}",
+            "class": "Config",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.requisition.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 27,
+            "description": "This property stores the organization's structure as a tree.\nIt is used as a base to create the main directory layout. You may\nhave as many levels as you want. This is called organization but\ncould have been called tree. No semantics at all related to an\norganization.",
+            "itemtype": "property",
+            "name": "organization",
+            "type": "{Array}",
+            "class": "Config",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.requisition.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 52,
+            "description": "Once the previous organization structure is available, following\nfolders are created into the leaves: e.g. ITS in the previous case.\nFor each folder, permissions for each group are available in\na very simple format of the form: Group(_Permission)? where permission\nmay be:\n\n* RO: Read-Only\n* NA: Not Available\n* nothing",
+            "itemtype": "property",
+            "name": "applicationFolders",
+            "type": "{Array}",
+            "todo": [
+                ": manage cases where group contains '_'"
+            ],
+            "class": "Config",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.requisition.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 79,
+            "description": "Test users. They are used to populate the application's group\nso you can test it in a standalone mode.",
+            "itemtype": "property",
+            "name": "persons",
+            "type": "{Array}",
+            "class": "Config",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.requisition.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 95,
+            "description": "This property stores the application roles which will be used\nto create required application groups. They are also used to create\nthe base groups for the organization.\nYou can of course provide your own group and insert them into\nthe application's groups.",
+            "itemtype": "property",
+            "name": "applicationGroups",
+            "type": "{Object}",
+            "class": "Config",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.requisition.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 121,
+            "description": "This property stores the application roles which will be used\nto create required application groups. They are also used to create\nthe base groups for the organization.\nYou can of course provide your own group and insert them into\nthe application's groups.",
+            "itemtype": "property",
+            "name": "organizationGroups",
+            "type": "{Object}",
+            "class": "Config",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.requisition.initialization"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/application/requisition/initialization/Config.js",
+            "line": 147,
+            "itemtype": "property",
+            "name": "resources",
+            "type": "{Object}",
+            "class": "Config",
+            "module": "SIDE.Initialization",
+            "submodule": "SIDE.application.requisition.initialization"
+        }
+    ]
+}

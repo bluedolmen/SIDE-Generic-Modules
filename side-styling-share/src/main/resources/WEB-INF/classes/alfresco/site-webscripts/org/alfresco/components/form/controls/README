@@ -1,0 +1,5 @@
+I just added a div container to surround the form-field object so I can
+more easily update its look and feel
+
+<#-- Id added so it is possible to control its display easily -->
+<div id="${controlId}-container" class="form-field">

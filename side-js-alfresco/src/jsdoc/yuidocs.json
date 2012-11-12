@@ -1,0 +1,17 @@
+{
+    "name": "UNO / Procurement Requisition Project",
+    "description": "Procurement Requisition Project",
+    "version": "0.9.0",
+    "url": "http://conf-side:8080/share",
+    "options": {
+		"external": {
+	      "data": "src/jsdoc/JS-library-server-SIDE-data.json"
+	    },
+        "linkNatives": "true",
+        "attributesEmit": "false",
+        "selleck": "true",
+        "ignorePaths": [],
+        "paths": "src/main/resources/alfresco/webscripts/extension/js",
+        "outdir": "target/api-js"
+    }
+}

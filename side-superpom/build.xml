@@ -1,0 +1,37 @@
+<project name="deploy" default="deploy">
+	<property file="${user.home}/build.properties" />
+	<property file="${basedir}/../../../build.${user.name}.properties" />
+	<property file="${basedir}/../../../deployer.side.properties" />
+	<property file="build.${user.name}.properties" />
+
+	<target name="deploy-alfresco">
+		<property name="alfresco.lib.dir" value="${alfresco.webapp.dir}/WEB-INF/lib"/>
+		<fileset dir="." id="alfresco-jars">
+			<exclude name="*-alfresco"/>
+			<exclude name="alfresco-*"/>
+			<include name="*/target/*.jar"/>
+		</fileset>
+
+		<echo message="Deploying jars into alfresco at ${alfresco.lib.dir}"/>
+		<copy todir="${alfresco.lib.dir}" flatten="true">
+			<fileset refid="alfresco-jars"/>
+		</copy>
+	</target>
+
+	<target name="deploy-share">
+		<property name="alfresco.share.lib.dir" value="${alfresco.share.webapp.dir}/WEB-INF/lib"/>
+		<fileset dir="." id="share-jars">
+			<exclude name="*-share"/>
+			<exclude name="share-*"/>
+			<include name="*/target/*.jar"/>
+		</fileset>
+
+		<echo message="Deploying jars into share at ${alfresco.share.lib.dir}"/>
+		<copy todir="${alfresco.share.lib.dir}" flatten="true">
+			<fileset refid="share-jars"/>
+		</copy>
+	</target>
+
+	<target name="deploy" depends="deploy-alfresco,deploy-share"/>
+
+</project>

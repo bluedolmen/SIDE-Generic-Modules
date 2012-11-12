@@ -1,0 +1,33 @@
+/*
+	Specific search parameter sets after the main one
+   	Doesn't work :-(
+   	It would be cool to have a same class for all these elements so
+   	we can easily apply a common UI like the following
+*/
+
+#search-search_Order_Search_Order > div {
+	clear: both;
+//	border-bottom: 1px dotted silver;
+	padding-top: 5px;
+	padding-bottom: 2px;
+}
+
+/* If previous doesn't work, then we need to set css styles for id... */
+/*
+#page_x002e_standalonesearch_x002e_standalonesearchform_1_prop_Requisition_ch_unog_dcm_oime_its_Order_n1-search-parameters,
+#page_x002e_standalonesearch_x002e_standalonesearchform_1_prop_Requisition_ch_unog_dcm_oime_its_Order_n2-search-parameters
+{
+	clear: both;
+	border-bottom: 1px dotted silver;
+	padding-top: 5px;
+	padding-bottom: 2px;
+}
+*/
+
+#search-search_Order_Search_Order > div > select {
+	float: left;
+}
+
+#search-search_Order_Search_Order > div > div.form-field {
+	float: left;
+}

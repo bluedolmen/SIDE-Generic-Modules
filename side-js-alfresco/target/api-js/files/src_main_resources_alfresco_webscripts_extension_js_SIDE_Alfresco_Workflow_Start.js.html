@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src&#x2F;main&#x2F;resources&#x2F;alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Workflow&#x2F;Start.js - UNO &#x2F; Procurement Requisition Project</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="..&#x2F;assets/favicon.png">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;combo?3.5.1&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title="UNO &#x2F; Procurement Requisition Project"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bootstrap.html">Bootstrap</a></li>
+            
+                <li><a href="..&#x2F;classes/Config.html">Config</a></li>
+            
+                <li><a href="..&#x2F;classes/DirectoryTree.html">DirectoryTree</a></li>
+            
+                <li><a href="..&#x2F;classes/Group.html">Group</a></li>
+            
+                <li><a href="..&#x2F;classes/OrderFolder.html">OrderFolder</a></li>
+            
+                <li><a href="..&#x2F;classes/People.html">People</a></li>
+            
+                <li><a href="..&#x2F;classes/Person.html">Person</a></li>
+            
+                <li><a href="..&#x2F;classes/Remote.html">Remote</a></li>
+            
+                <li><a href="..&#x2F;classes/Rule.html">Rule</a></li>
+            
+                <li><a href="..&#x2F;classes/Start.html">Start</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/SIDE.Alfresco.Workflow.html">SIDE.Alfresco.Workflow</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.initialization.html">SIDE.application.initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.requisition.bizrule.html">SIDE.application.requisition.bizrule</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.requisition.initialization.html">SIDE.application.requisition.initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.Initialization.html">SIDE.Initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.Procurement.html">SIDE.Procurement</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src&#x2F;main&#x2F;resources&#x2F;alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Workflow&#x2F;Start.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;base.js&quot;&gt;
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Helper&#x2F;Search.js&quot;&gt;
+
+SIDE.define(&quot;SIDE.Alfresco.Workflow&quot;);
+&#x2F;**
+ * This library provides helper functions to dynamically create all kind of
+ * workflow start script. A rule will generally be created later to call
+ * this script.
+ *
+ * @author Jean-Christophe Kermagoret
+ *
+ * @class Start
+ * @module SIDE.Alfresco
+ * @submodule SIDE.Alfresco.Workflow
+ * @param {string} workflowName &quot;jbpm$wfbxRequisition:Requisition&quot;
+ * @param {string} description  &quot;Please review this PR: &quot;
+ * @param {int}    delay	   7
+ *&#x2F;
+SIDE.Alfresco.Workflow.Start = function (workflowName, description, delay) {
+	&#x2F;&#x2F;workflow and document are available as native JS objects in Repository context
+	logger.log(&quot;Configuring &quot; + workflowName + &quot; start workflow action&quot;);
+
+	var workflow = actions.create(&quot;start-workflow&quot;);
+	workflow.parameters.workflowName = workflowName;
+	workflow.parameters[&quot;bpm:workflowDescription&quot;] = description + &quot; &quot; + document.name;
+
+	var futureDate = new Date();
+	futureDate.setDate(futureDate.getDate() + delay);
+	workflow.parameters[&quot;bpm:workflowDueDate&quot;] = futureDate;
+
+	logger.log(&quot;Starting -&quot; + workflowName + &quot;.&quot;);
+	workflow.execute(document);
+	logger.log(&quot;Workflow -&quot; + workflowName + &quot;- launched on &quot; + document.properties[&quot;title&quot;] + &quot;.&quot;);
+}
+
+SIDE.Alfresco.Workflow.Start.createScript = function(workflowName, description, delay, _space, name, destination) {
+	var nodes = null;
+	if (_space == null || _space == undefined) {
+		nodes = SIDE.Alfresco.Helper.Search.find(&quot;&#x2F;app:company_home&#x2F;app:dictionary&#x2F;app:scripts&quot;);
+	} else {
+		nodes = SIDE.Alfresco.Helper.Search.find(_space);
+	}
+
+	var space = null;
+	logger.log(&quot;How many nodes have been found? &quot; + nodes.length + &quot;.&quot;);
+	if (nodes.length &gt;= 1) {
+		logger.log(&quot;We only need one. So we take first.&quot;);
+		space = nodes[0];
+	}
+
+	if (space != null) {
+		logger.log(&quot;Workflow start script directory: &quot; + space.name);
+
+		if (name == null || name == undefined) {
+			name = workflowName;
+			name = workflowName.replace(&#x2F;.*:&#x2F;g, &quot;&quot;);
+			name = &quot;SIDE.&quot; + name + &quot;.Workflow.Start.js&quot;;
+		}
+		logger.log(&quot;Worklfow start script name: &quot; + name);
+
+		&#x2F;* Creates the script into the repository *&#x2F;
+        var code = &quot;&lt;import resource=&#x27;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Workflow&#x2F;Start.js&#x27;&gt;\n\n&quot;
+        			+ &quot;SIDE.Alfresco.Workflow.Start(&quot;
+		   					+ &quot;\&quot;&quot; + workflowName + &quot;\&quot;, &quot;
+		   					+ &quot;\&quot;&quot; + description + &quot;\&quot;, &quot;
+		   					+ delay + &quot;, &quot;
+		   					+ &quot;\&quot;&quot; + destination + &quot;\&quot;);&quot;;
+
+        logger.log(&quot;The following code is going to be inserted:\n* &quot; + code + &quot;\ninto: &quot; + space.displayPath + &quot;&#x2F;&quot; + space.name + &quot;&#x2F;&quot; + name);
+      try {
+          script = space.createFile(name);
+          script.content = code;
+          script.save();
+      } catch (e) {
+		logger.log(&quot;Workflow start script: -&quot; + name + &quot;- already exists.&quot;);
+      }
+	} else {
+		logger.log(&quot;Workflow start script directory: &quot; + _space + &quot; has not been found&quot;);
+	}
+
+	return script;
+}
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

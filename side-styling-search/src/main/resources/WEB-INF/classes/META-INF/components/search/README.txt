@@ -1,0 +1,1 @@
+search-alfresco.css is the original search.css file

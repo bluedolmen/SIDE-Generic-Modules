@@ -1,0 +1,678 @@
+MavenUtil execute maven request :
+** args :mvn archetype:generate -B -e -DarchetypeGroupId=com.bluexml.side.Framework.maven -DgroupId=org.sidelabs -DarchetypeArtifactId=ampArchetypeForSide_40d -Dinteractive=false -DarchetypeVersion=1.0.5 -DartifactId=side-js-alfresco -Dproject-name=side-js-alfresco -Dwebapp-name=share -Dversion=1.0.0
+** working directory :/Users/bluexml/opt/local/workspaces/demos/Requisition/src/modules/mavenProjects
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for ch.unog.requisition:external-alfresco:amp:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 143, column 12
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 102, column 12
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:buildnumber-maven-plugin is missing. @ line 84, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for code.google.com.alfresco:external-alfresco-share-datatable-property-type:zip:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 92, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.sidelabs.ui:side-alfresco-share-layout-menu:zip:1.0.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 92, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.sidelabs:side-search:zip:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 92, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.sidelabs.ui:side-theme:zip:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 92, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.sidelabs:side-workflow-transition:jar:1.0
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 127, column 12
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:buildnumber-maven-plugin is missing. @ line 109, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for ch.unog:side-workflow-requisition:jar:1.0
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 116, column 12
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:buildnumber-maven-plugin is missing. @ line 98, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.sidelabs.help:side-custom-application-help:zip:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 91, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.sidelabs:side-custom-share:zip:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 92, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for ch.unog.requisition:side-custom-alfresco:amp:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 156, column 12
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 115, column 12
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:buildnumber-maven-plugin is missing. @ line 97, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.sidelabs.js:side-external-server-js:amp:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 156, column 12
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 115, column 12
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:buildnumber-maven-plugin is missing. @ line 97, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.sidelabs.js:side-server-js:amp:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 156, column 12
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 115, column 12
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:buildnumber-maven-plugin is missing. @ line 97, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Requisition
+[INFO] external-alfresco
+[INFO] external-alfresco-share-datatable-property-type
+[INFO] side-alfresco-share-layout-menu
+[INFO] side-search
+[INFO] side-theme
+[INFO] side-workflow-transition
+[INFO] side-workflow-requisition
+[INFO] side-custom-application-help
+[INFO] side-custom-share
+[INFO] side-custom-alfresco
+[INFO] JS-library-SIDE
+[INFO] side-external-server-js
+[INFO] side-server-js
+Downloading: http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-metadata.xml
+Downloading: http://pipin.bluexml.com/nexus/content/groups/public/org/apache/maven/plugins/maven-metadata.xml
+Downloading: http://pipin.bluexml.com/nexus/content/groups/public/org/codehaus/mojo/maven-metadata.xml
+Downloading: http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/codehaus/mojo/maven-metadata.xml
+18:13:16.508 [pool-55-thread-3] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Non cached request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/codehaus/mojo/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+using Channel 
+[id: 0x01b485a3, /10.18.161.4:49951 => pipin.bluexml.com/178.33.134.213:80]
+
+18:13:16.508 [pool-55-thread-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Non cached request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+using Channel 
+[id: 0x00ad0c69, /10.18.161.4:49952 => pipin.bluexml.com/178.33.134.213:80]
+
+18:13:16.508 [pool-55-thread-2] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Non cached request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/apache/maven/plugins/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+using Channel 
+[id: 0x0109cc19, /10.18.161.4:49953 => pipin.bluexml.com/178.33.134.213:80]
+
+18:13:16.508 [pool-55-thread-4] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Non cached request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/codehaus/mojo/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+using Channel 
+[id: 0x017ed856, /10.18.161.4:49954 => pipin.bluexml.com/178.33.134.213:80]
+
+18:13:21.607 [New I/O client worker #56-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: true)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:19 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=b6ba3797-874f-448c-b031-351e686ee3e9; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:19 GMT
+Last-Modified: Mon, 23 Jul 2012 14:21:59 GMT
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: application/xml
+Content-Length: 8212
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+
+18:13:21.623 [New I/O client worker #58-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/codehaus/mojo/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: true)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:19 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=d9b130eb-5f53-4357-a351-0c6e3511ebe0; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:19 GMT
+Last-Modified: Tue, 01 May 2012 03:10:27 GMT
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: application/xml
+Content-Length: 20894
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+
+18:13:21.649 [New I/O client worker #56-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x00ad0c69, /10.18.161.4:49952 => pipin.bluexml.com/178.33.134.213:80]
+18:13:21.686 [New I/O client worker #58-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x01b485a3, /10.18.161.4:49951 => pipin.bluexml.com/178.33.134.213:80]
+Downloaded: http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-metadata.xml (9 KB at 1.5 KB/sec)
+Downloaded: http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/codehaus/mojo/maven-metadata.xml (21 KB at 3.9 KB/sec)
+18:13:21.688 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Using cached Channel [id: 0x00ad0c69, /10.18.161.4:49952 => pipin.bluexml.com/178.33.134.213:80]
+ for uri http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-metadata.xml.sha1
+
+18:13:21.688 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Using cached Channel [id: 0x00ad0c69, /10.18.161.4:49952 => pipin.bluexml.com/178.33.134.213:80]
+ for request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+18:13:21.689 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Using cached Channel [id: 0x01b485a3, /10.18.161.4:49951 => pipin.bluexml.com/178.33.134.213:80]
+ for uri http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/codehaus/mojo/maven-metadata.xml.sha1
+
+18:13:21.690 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Using cached Channel [id: 0x01b485a3, /10.18.161.4:49951 => pipin.bluexml.com/178.33.134.213:80]
+ for request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/codehaus/mojo/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+18:13:21.718 [New I/O client worker #56-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: false)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:19 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=b196c3bb-534f-4991-867f-8b757c60b804; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:19 GMT
+Last-Modified: Wed, 25 Jul 2012 16:13:19 GMT
+ETag: "ac537928502a8711ae458eda04919f6b83533e3f"
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: text/plain
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+Content-Encoding: identity
+Content-Length: 41
+
+18:13:21.719 [New I/O client worker #56-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x00ad0c69, /10.18.161.4:49952 => pipin.bluexml.com/178.33.134.213:80]
+18:13:21.720 [New I/O client worker #58-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/codehaus/mojo/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: false)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:19 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=aa192de2-0553-4898-aed5-bf2fd9b22cf9; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:19 GMT
+Last-Modified: Wed, 25 Jul 2012 16:13:19 GMT
+ETag: "eb165efbcd2d05e7bb113ab474572cc13b70d540"
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: text/plain
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+Content-Encoding: identity
+Content-Length: 41
+
+18:13:21.720 [New I/O client worker #58-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x01b485a3, /10.18.161.4:49951 => pipin.bluexml.com/178.33.134.213:80]
+18:13:21.833 [New I/O client worker #55-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/apache/maven/plugins/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: true)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:19 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=bdb55e0b-d297-4297-a82b-3e2975f5e191; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:19 GMT
+Last-Modified: Mon, 23 Jul 2012 14:21:59 GMT
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: application/xml
+Content-Length: 11317
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+
+18:13:21.843 [New I/O client worker #57-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/codehaus/mojo/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: true)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:19 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=f45cce6f-2593-4f6d-ad80-eee6ad1bfeb8; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:19 GMT
+Last-Modified: Tue, 24 Jul 2012 03:37:35 GMT
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: application/xml
+Content-Length: 24409
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+
+18:13:21.875 [New I/O client worker #55-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x0109cc19, /10.18.161.4:49953 => pipin.bluexml.com/178.33.134.213:80]
+Downloaded: http://pipin.bluexml.com/nexus/content/groups/public/org/apache/maven/plugins/maven-metadata.xml (12 KB at 2.0 KB/sec)
+18:13:21.876 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Using cached Channel [id: 0x0109cc19, /10.18.161.4:49953 => pipin.bluexml.com/178.33.134.213:80]
+ for uri http://pipin.bluexml.com/nexus/content/groups/public/org/apache/maven/plugins/maven-metadata.xml.sha1
+
+18:13:21.876 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Using cached Channel [id: 0x0109cc19, /10.18.161.4:49953 => pipin.bluexml.com/178.33.134.213:80]
+ for request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/apache/maven/plugins/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+18:13:21.906 [New I/O client worker #55-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/apache/maven/plugins/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: false)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:20 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=a3c0efd8-c17d-416e-ab8b-f58eb814955f; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:19 GMT
+Last-Modified: Wed, 25 Jul 2012 16:13:19 GMT
+ETag: "5be5e3aa3a433761e2227174b88b8dac2d052be6"
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: text/plain
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+Content-Encoding: identity
+Content-Length: 41
+
+18:13:21.906 [New I/O client worker #55-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x0109cc19, /10.18.161.4:49953 => pipin.bluexml.com/178.33.134.213:80]
+18:13:21.907 [New I/O client worker #57-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x017ed856, /10.18.161.4:49954 => pipin.bluexml.com/178.33.134.213:80]
+Downloaded: http://pipin.bluexml.com/nexus/content/groups/public/org/codehaus/mojo/maven-metadata.xml (24 KB at 4.4 KB/sec)
+18:13:21.908 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Using cached Channel [id: 0x017ed856, /10.18.161.4:49954 => pipin.bluexml.com/178.33.134.213:80]
+ for uri http://pipin.bluexml.com/nexus/content/groups/public/org/codehaus/mojo/maven-metadata.xml.sha1
+
+18:13:21.908 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Using cached Channel [id: 0x017ed856, /10.18.161.4:49954 => pipin.bluexml.com/178.33.134.213:80]
+ for request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/codehaus/mojo/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+18:13:21.944 [New I/O client worker #57-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/codehaus/mojo/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: false)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:20 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=c9bb46ad-8027-4989-9583-f83fc3592a37; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:20 GMT
+Last-Modified: Wed, 25 Jul 2012 16:13:19 GMT
+ETag: "830c58e537b8b5c5c84f29d512ec66dc6c40bb09"
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: text/plain
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+Content-Encoding: identity
+Content-Length: 41
+
+18:13:21.944 [New I/O client worker #57-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x017ed856, /10.18.161.4:49954 => pipin.bluexml.com/178.33.134.213:80]
+Downloading: http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml
+18:13:21.975 [pool-60-thread-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Non cached request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+using Channel 
+[id: 0x0037dd94, /10.18.161.4:49955 => pipin.bluexml.com/178.33.134.213:80]
+
+Downloading: http://pipin.bluexml.com/nexus/content/groups/public/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml
+18:13:21.994 [pool-60-thread-2] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Non cached request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+using Channel 
+[id: 0x00ccde60, /10.18.161.4:49956 => pipin.bluexml.com/178.33.134.213:80]
+
+18:13:22.072 [New I/O client worker #59-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: false)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:20 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=db263b7d-3ddd-451f-8537-fdc1e5fd5aa5; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:20 GMT
+Last-Modified: Wed, 27 Jun 2012 23:08:30 GMT
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: application/xml
+Content-Length: 384
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+
+18:13:22.073 [New I/O client worker #59-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x0037dd94, /10.18.161.4:49955 => pipin.bluexml.com/178.33.134.213:80]
+Downloaded: http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml (384 B at 3.8 KB/sec)
+18:13:22.073 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Using cached Channel [id: 0x0037dd94, /10.18.161.4:49955 => pipin.bluexml.com/178.33.134.213:80]
+ for uri http://pipin.bluexml.com/nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml.sha1
+
+18:13:22.074 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Using cached Channel [id: 0x0037dd94, /10.18.161.4:49955 => pipin.bluexml.com/178.33.134.213:80]
+ for request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+18:13:22.102 [New I/O client worker #59-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public-snapshots/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: false)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:20 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=4080cfeb-7746-467e-a556-f788e96d7671; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:20 GMT
+Last-Modified: Wed, 25 Jul 2012 16:13:20 GMT
+ETag: "64e7c21044255e88862646b0881a71548ad117d3"
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: text/plain
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+Content-Encoding: identity
+Content-Length: 41
+
+18:13:22.102 [New I/O client worker #59-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x0037dd94, /10.18.161.4:49955 => pipin.bluexml.com/178.33.134.213:80]
+18:13:22.252 [New I/O client worker #60-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml HTTP/1.1
+Host: pipin.bluexml.com
+Pragma: no-cache
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: false)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:20 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=ed84cb8e-49fe-4df3-bc10-b54483683f6c; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:20 GMT
+Last-Modified: Wed, 27 Jun 2012 23:08:30 GMT
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: application/xml
+Content-Length: 794
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+
+18:13:22.252 [New I/O client worker #60-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x00ccde60, /10.18.161.4:49956 => pipin.bluexml.com/178.33.134.213:80]
+Downloaded: http://pipin.bluexml.com/nexus/content/groups/public/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml (794 B at 3.0 KB/sec)
+18:13:22.253 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Using cached Channel [id: 0x00ccde60, /10.18.161.4:49956 => pipin.bluexml.com/178.33.134.213:80]
+ for uri http://pipin.bluexml.com/nexus/content/groups/public/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml.sha1
+
+18:13:22.253 [AsyncHttpClient-Callback] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Using cached Channel [id: 0x00ccde60, /10.18.161.4:49956 => pipin.bluexml.com/178.33.134.213:80]
+ for request 
+DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+18:13:22.282 [New I/O client worker #60-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /nexus/content/groups/public/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml.sha1 HTTP/1.1
+Host: pipin.bluexml.com
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven/3.0.2 (Java 1.6.0_29; Mac OS X 10.7.3)
+
+Response DefaultHttpResponse(chunked: false)
+HTTP/1.0 200 OK
+Date: Wed, 25 Jul 2012 16:13:20 GMT
+Server: Noelios-Restlet-Engine/1.1.6-SONATYPE-5348-V4
+Set-Cookie: JSESSIONID=7f497828-8a01-4a69-b18b-ce3a6bebdbb7; Path=/nexus; HttpOnly
+Set-Cookie: rememberMe=deleteMe; Path=/nexus; Max-Age=0; Expires=Tue, 24-Jul-2012 16:13:20 GMT
+Last-Modified: Wed, 25 Jul 2012 16:13:20 GMT
+ETag: "c3f880b04f8158b223dff5b2ac68434df39c0257"
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept
+Content-Type: text/plain
+X-Cache: MISS from icts-brunella.unog.un.org
+X-Cache-Lookup: MISS from icts-brunella.unog.un.org:3128
+Via: 1.1 icts-brunella.unog.un.org:3128 (squid/2.7.STABLE9)
+Connection: keep-alive
+Content-Encoding: identity
+Content-Length: 41
+
+18:13:22.282 [New I/O client worker #60-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://pipin.bluexml.com:80 for channel [id: 0x00ccde60, /10.18.161.4:49956 => pipin.bluexml.com/178.33.134.213:80]
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Requisition 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> maven-archetype-plugin:2.2:generate (default-cli) @ Requisition >>>
+[INFO] 
+[INFO] <<< maven-archetype-plugin:2.2:generate (default-cli) @ Requisition <<<
+[INFO] 
+[INFO] --- maven-archetype-plugin:2.2:generate (default-cli) @ Requisition ---
+[INFO] Generating project in Batch mode
+18:13:24.768 [main] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+Non cached request 
+DefaultHttpRequest(chunked: false)
+GET /maven2/archetype-catalog.xml HTTP/1.1
+Host: repo1.maven.org
+Pragma: no-cache
+Cache-Control: no-cache, no-store
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven
+
+using Channel 
+[id: 0x004d4b28, /10.18.161.4:49957 => repo1.maven.org/68.232.34.223:80]
+
+18:13:24.802 [New I/O client worker #61-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - 
+
+Request DefaultHttpRequest(chunked: false)
+GET /maven2/archetype-catalog.xml HTTP/1.1
+Host: repo1.maven.org
+Pragma: no-cache
+Cache-Control: no-cache, no-store
+Accept-Encoding: gzip
+Connection: keep-alive
+Accept: */*
+User-Agent: Apache-Maven
+
+Response DefaultHttpResponse(chunked: true)
+HTTP/1.0 200 OK
+Accept-Ranges: bytes
+Content-Type: text/xml
+Date: Wed, 25 Jul 2012 16:13:22 GMT
+Last-Modified: Sun, 22 Jul 2012 12:16:00 GMT
+Server: ECAcc (ams/4898)
+X-Cache: HIT
+Content-Length: 1045788
+X-Cache: MISS from icts-snowball.unog.un.org
+X-Cache-Lookup: MISS from icts-snowball.unog.un.org:3128
+Via: 1.0 icts-snowball.unog.un.org:3128 (squid/2.7.STABLE6)
+Connection: keep-alive
+
+18:13:25.130 [New I/O client worker #61-1] DEBUG c.n.h.c.p.n.NettyAsyncHttpProvider - Adding uri: http://repo1.maven.org:80 for channel [id: 0x004d4b28, /10.18.161.4:49957 => repo1.maven.org/68.232.34.223:80]
+[WARNING] Archetype not found in any catalog. Falling back to central repository (http://repo1.maven.org/maven2).
+[WARNING] Use -DarchetypeRepository=<your repository> if archetype's repository is elsewhere.
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Archetype: ampArchetypeForSide_40d:1.0.5
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: groupId, Value: org.sidelabs
+[INFO] Parameter: artifactId, Value: side-js-alfresco
+[INFO] Parameter: version, Value: 1.0.0
+[INFO] Parameter: package, Value: org.sidelabs
+[INFO] Parameter: packageInPathFormat, Value: org/sidelabs
+[INFO] Parameter: package, Value: org.sidelabs
+[INFO] Parameter: version, Value: 1.0.0
+[INFO] Parameter: groupId, Value: org.sidelabs
+[INFO] Parameter: project-description, Value: this is a new Amp project generated using	"com.bluexml.side.Integration.m2.ampArchetype" thanks to change this description
+[INFO] Parameter: project-name, Value: side-js-alfresco
+[INFO] Parameter: artifactId, Value: side-js-alfresco
+[INFO] project created from Archetype in dir: /Users/bluexml/opt/local/workspaces/demos/Requisition/src/modules/mavenProjects/side-js-alfresco
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Requisition ....................................... SUCCESS [3.570s]
+[INFO] external-alfresco ................................. SKIPPED
+[INFO] external-alfresco-share-datatable-property-type ... SKIPPED
+[INFO] side-alfresco-share-layout-menu ................... SKIPPED
+[INFO] side-search ....................................... SKIPPED
+[INFO] side-theme ........................................ SKIPPED
+[INFO] side-workflow-transition .......................... SKIPPED
+[INFO] side-workflow-requisition ......................... SKIPPED
+[INFO] side-custom-application-help ...................... SKIPPED
+[INFO] side-custom-share ................................. SKIPPED
+[INFO] side-custom-alfresco .............................. SKIPPED
+[INFO] JS-library-SIDE ................................... SKIPPED
+[INFO] side-external-server-js ........................... SKIPPED
+[INFO] side-server-js .................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.340s
+[INFO] Finished at: Wed Jul 25 18:13:26 CEST 2012
+[INFO] Final Memory: 300M/505M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "public" could not be activated because it does not exist.

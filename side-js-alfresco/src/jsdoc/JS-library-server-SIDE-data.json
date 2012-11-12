@@ -1,0 +1,599 @@
+{
+    "project": {
+        "name": "SIDE-Labs Library server",
+        "description": "A set of libraries to make Alfesco JS development easier",
+        "version": "1.0.0",
+        "url": "http://www.side-labs.org"
+    },
+    "files": {
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Admin/Clean.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Admin/Clean.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "SIDE.Alfresco.Admin.Clean": 1
+            }
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/DataLists.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/DataLists.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "SIDE.Alfresco.Helper.DataLists": 1
+            }
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Folder.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Folder.js",
+            "modules": {},
+            "classes": {
+                "SIDE.Alfresco.Helper.DataLists.Folder": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js",
+            "modules": {},
+            "classes": {
+                "Search": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Util.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Util.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "SIDE.Alfresco.Helper.Util": 1
+            }
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/YaMma/AutoUpdate-Spec.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/YaMma/AutoUpdate-Spec.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/YaMma/AutoUpdate.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/YaMma/AutoUpdate.js",
+            "modules": {
+                "SIDE.YaMma": 1
+            },
+            "classes": {
+                "SIDE.Alfresco.Helper.Util.AutoUpdate": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/tests/NoSuchMethod.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/tests/NoSuchMethod.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/tests/test-pavlov.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/tests/test-pavlov.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/util/Logger.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/util/Logger.js",
+            "modules": {
+                "SIDE.Util": 1
+            },
+            "classes": {
+                "Logger": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/main/resources/alfresco/webscripts/extension/js/SIDE/base.js": {
+            "name": "src/main/resources/alfresco/webscripts/extension/js/SIDE/base.js",
+            "modules": {},
+            "classes": {
+                "SIDE": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "SIDE.Alfresco": {
+            "name": "SIDE.Alfresco",
+            "submodules": {
+                "SIDE.Alfresco.Helper": 1
+            },
+            "classes": {
+                "SIDE.Alfresco.Helper.DataLists.Folder": 1,
+                "Search": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "SIDE.Alfresco.Helper.Util": 1
+            },
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js",
+            "line": 5
+        },
+        "SIDE.Alfresco.Helper": {
+            "name": "SIDE.Alfresco.Helper",
+            "submodules": {},
+            "classes": {
+                "SIDE.Alfresco.Helper.DataLists.Folder": 1,
+                "Search": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "SIDE.Alfresco",
+            "namespace": "",
+            "description": "2006-2012 BlueXML Copyright\n\nThis class provides helpers to manage folders. It of course uses\nAlfresco folder implementation. To augment it should be a good idea.",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js",
+            "line": 5
+        },
+        "SIDE.YaMma": {
+            "name": "SIDE.YaMma",
+            "submodules": {},
+            "classes": {
+                "SIDE.Alfresco.Helper.Util.AutoUpdate": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/YaMma/AutoUpdate.js",
+            "line": 6,
+            "description": "2006-2012 BlueXML Copyright\n\nThis class provides a auto-update mechanisme to update metadata\nbased on other metadata's values."
+        },
+        "SIDE.Util": {
+            "name": "SIDE.Util",
+            "submodules": {},
+            "classes": {
+                "Logger": 1,
+                "SIDE": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/base.js",
+            "line": 1,
+            "description": "This class provides a logger more advanced than native logger. But,\nthe true solution should be to use Log4javascript.\n\nNevertheless, to avoid such an overhead, we could augment default logger\nwith the following behaviors"
+        }
+    },
+    "classes": {
+        "SIDE.Alfresco.Helper.DataLists.Folder": {
+            "name": "SIDE.Alfresco.Helper.DataLists.Folder",
+            "shortname": "Folder",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Alfresco",
+            "namespace": "SIDE.Alfresco.Helper.DataLists",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Folder.js",
+            "line": 5,
+            "description": "2006-2012 BlueXML Copyright\n\nThis class provides helpers to manage folders. It of course uses\nAlfresco folder implementation. To augment it should be a good idea.",
+            "author": "Jean-Christophe Kermagoret (jck@bluexml.com)",
+            "submodule": "SIDE.Alfresco.Helper",
+            "static": 1
+        },
+        "Search": {
+            "name": "Search",
+            "shortname": "Search",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Alfresco",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js",
+            "line": 5,
+            "description": "2006-2012 BlueXML Copyright\n\nThis class provides methods to search data in a more consistent way",
+            "author": "Jean-Christophe Kermagoret (jck@bluexml.com)",
+            "submodule": "SIDE.Alfresco.Helper",
+            "static": 1
+        },
+        "SIDE.Alfresco.Helper.Util.AutoUpdate": {
+            "name": "SIDE.Alfresco.Helper.Util.AutoUpdate",
+            "shortname": "AutoUpdate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.YaMma",
+            "namespace": "SIDE.Alfresco.Helper.Util",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/YaMma/AutoUpdate.js",
+            "line": 6,
+            "description": "2006-2012 BlueXML Copyright\n\nThis class provides a auto-update mechanisme to update metadata\nbased on other metadata's values.",
+            "author": "Jean-Christophe Kermagoret (jck@bluexml.com)",
+            "static": 1
+        },
+        "Logger": {
+            "name": "Logger",
+            "shortname": "Logger",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Util",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/util/Logger.js",
+            "line": 5,
+            "description": "This class provides a logger more advanced than native logger. But,\nthe true solution should be to use Log4javascript.\n\nNevertheless, to avoid such an overhead, we could augment default logger\nwith the following behaviors",
+            "author": "Jean-Christophe Kermagoret",
+            "static": 1
+        },
+        "SIDE": {
+            "name": "SIDE",
+            "shortname": "SIDE",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SIDE.Util",
+            "namespace": "",
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/base.js",
+            "line": 1,
+            "description": "2006-2012 BlueXML Copyright\n\nThis class provides a function to manage namespaces in js.\n\nAdapted to rhino environment from:\n* http://elegantcode.com/2011/01/26/basic-javascript-part-8-namespaces/",
+            "author": "Jean-Christophe Kermagoret (jck@bluexml.com)"
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Admin/Clean.js",
+            "line": 5,
+            "description": "2006-2012 BlueXML Copyright\n\nThis class cleans content in an Alfresco repository",
+            "author": "Jean-Christophe Kermagoret (jck@bluexml.com)",
+            "class": "SIDE.Alfresco.Helper.DataLists.Folder",
+            "namespace": "SIDE.Alfresco.Admin.Clean"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/DataLists.js",
+            "line": 5,
+            "description": "2006-2012 BlueXML Copyright\n\nThis class creates data lists from csv data",
+            "author": "Jean-Christophe Kermagoret (jck@bluexml.com)",
+            "class": "SIDE.Alfresco.Helper.DataLists.Folder",
+            "namespace": "SIDE.Alfresco.Helper.DataLists"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/DataLists.js",
+            "line": 25,
+            "description": "Creates the \"dataLists\" directory if not present and the datalists\nfor the provided site.",
+            "class": "SIDE.Alfresco.Helper.DataLists.Folder",
+            "namespace": "SIDE.Alfresco.Helper.DataLists"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Folder.js",
+            "line": 20,
+            "description": "Creates a folder from provided name and description in the parent serving\nas root",
+            "itemtype": "method",
+            "name": "create",
+            "params": [
+                {
+                    "name": "node",
+                    "description": "Root to create path",
+                    "type": "NodeRef"
+                },
+                {
+                    "name": "path",
+                    "description": "Directory to create",
+                    "type": "String"
+                },
+                {
+                    "name": "description",
+                    "description": "String description",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "nodes Array of created nodes, corresponding to each\ncreated path",
+                "type": "Array"
+            },
+            "bug": ": Should limit search to direct children or try and catch exception",
+            "class": "SIDE.Alfresco.Helper.DataLists.Folder",
+            "module": "SIDE.Alfresco",
+            "submodule": "SIDE.Alfresco.Helper"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Folder.js",
+            "line": 43,
+            "description": "Creates a set of string paths in the provided node, serving as root.",
+            "itemtype": "method",
+            "name": "createPathes",
+            "params": [
+                {
+                    "name": "node",
+                    "description": "Root to create path",
+                    "type": "NodeRef"
+                },
+                {
+                    "name": "pathes",
+                    "description": "Array of string pathes",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "nodes Array of created nodes, corresponding to each\ncreated path",
+                "type": "Array"
+            },
+            "class": "SIDE.Alfresco.Helper.DataLists.Folder",
+            "module": "SIDE.Alfresco",
+            "submodule": "SIDE.Alfresco.Helper"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Folder.js",
+            "line": 61,
+            "description": "Creates a folder from provided path and description in the parent serving\nas root. Intermediate directories will be created.\n\nThis works like the unix command: \"mkdir -p ...\"",
+            "itemtype": "method",
+            "name": "createPath",
+            "params": [
+                {
+                    "name": "node",
+                    "description": "Root to create path",
+                    "type": "NodeRef"
+                },
+                {
+                    "name": "path",
+                    "description": "Path to create",
+                    "type": "String"
+                },
+                {
+                    "name": "description",
+                    "description": "String description",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "nodes Array of created nodes, corresponding to each\ncreated path",
+                "type": "Array"
+            },
+            "class": "SIDE.Alfresco.Helper.DataLists.Folder",
+            "module": "SIDE.Alfresco",
+            "submodule": "SIDE.Alfresco.Helper"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Folder.js",
+            "line": 90,
+            "description": "Returns an array of results if rootPath exists or creates it and\nreturns it when the rootPath is created, still an array!",
+            "itemtype": "method",
+            "name": "findOrCreateIfNotExists",
+            "params": [
+                {
+                    "name": "rootPath",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "nodes corresponding to the rootPath query or the\njust created one",
+                "type": "Array"
+            },
+            "class": "SIDE.Alfresco.Helper.DataLists.Folder",
+            "module": "SIDE.Alfresco",
+            "submodule": "SIDE.Alfresco.Helper"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js",
+            "line": 19,
+            "description": "Searches documents by namespace",
+            "itemtype": "method",
+            "name": "byNS",
+            "params": [
+                {
+                    "name": "ns",
+                    "description": "namespace to look for",
+                    "type": "String"
+                },
+                {
+                    "name": "f",
+                    "description": "function to apply on the resulting nodes",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "nodes verifiyg the provided namespace",
+                "type": "Array"
+            },
+            "class": "Search",
+            "module": "SIDE.Alfresco",
+            "submodule": "SIDE.Alfresco.Helper"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js",
+            "line": 42,
+            "description": "Searches documents by query",
+            "itemtype": "method",
+            "name": "byQuery",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "lucene query to execute",
+                    "type": "String"
+                },
+                {
+                    "name": "f",
+                    "description": "function to apply on the resulting nodes",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "nodes verifiyg the provided namespace",
+                "type": "Array"
+            },
+            "class": "Search",
+            "module": "SIDE.Alfresco",
+            "submodule": "SIDE.Alfresco.Helper"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js",
+            "line": 64,
+            "description": "Provides an unified way to find content.\n\nAccording query type, analyzed very quickly according its first chars,\nthe search is redirected on the corresponding search method",
+            "itemtype": "method",
+            "name": "find",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "Query to execute",
+                    "type": "String"
+                },
+                {
+                    "name": "type",
+                    "description": "?",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "nodes verifying the provided query",
+                "type": "Array"
+            },
+            "class": "Search",
+            "module": "SIDE.Alfresco",
+            "submodule": "SIDE.Alfresco.Helper"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Search.js",
+            "line": 118,
+            "description": "The find method is overridden, which should be done\nin another file!!!\n\nBecause of a bug in the indexing system on my system, I had\nto make that workaround. Only raw lucene queries were working :-(",
+            "itemtype": "method",
+            "name": "find",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "Query to execute",
+                    "type": "String"
+                },
+                {
+                    "name": "root",
+                    "description": "The starting object for the search",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "nodes verifying the provided query and root",
+                "type": "Array"
+            },
+            "class": "Search",
+            "module": "SIDE.Alfresco",
+            "submodule": "SIDE.Alfresco.Helper"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/Alfresco/Helper/Util.js",
+            "line": 4,
+            "description": "2006-2012 BlueXML Copyright\n\nThis class just touches content so it appears 'fresh'",
+            "author": "Jean-Christophe Kermagoret (jck@bluexml.com)",
+            "class": "SIDE.Alfresco.Helper.Util.AutoUpdate",
+            "module": "SIDE.Alfresco",
+            "namespace": "SIDE.Alfresco.Helper.Util"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/YaMma/AutoUpdate-Spec.js",
+            "line": 10,
+            "description": "BlueXML Copyright",
+            "author": "Jean-Christophe Kermagoret (jck@bluexml.com)",
+            "class": "SIDE.Alfresco.Helper.Util.AutoUpdate",
+            "module": "SIDE.Alfresco",
+            "namespace": "SIDE.Alfresco.Helper.Util"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/tests/NoSuchMethod.js",
+            "line": 1,
+            "description": "This file is a test to show we can inherit Alfresco JS\nRoot Objects very simply through the use of __noSuchMethod__ function\n\nhttp://www.crockford.com/javascript/inheritance.html\nhttp://stackoverflow.com/questions/4706236/how-to-pass-all-arguments-as-collection-to-another-function-and-not-as-single-ar",
+            "class": "Logger",
+            "module": "SIDE.YaMma"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/tests/test-pavlov.js",
+            "line": 53,
+            "description": "Asserts two arrays contain same values",
+            "class": "Logger",
+            "module": "SIDE.YaMma"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/util/Logger.js",
+            "line": 20,
+            "description": "Formats a comment line with provided separators",
+            "itemtype": "method",
+            "name": "log",
+            "params": [
+                {
+                    "name": "logMessage",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "_c1",
+                    "description": "First level separator",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "*"
+                },
+                {
+                    "name": "_c2",
+                    "description": "Second level separator",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "-"
+                },
+                {
+                    "name": "nbOfOccurrences",
+                    "description": "",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "30"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Logger",
+            "module": "SIDE.Util"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/util/Logger.js",
+            "line": 46,
+            "description": "Dumps/logs obecjt's content according it has or not properties",
+            "itemtype": "method",
+            "name": "dump",
+            "params": [
+                {
+                    "name": "o",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": ""
+            },
+            "class": "Logger",
+            "module": "SIDE.Util"
+        },
+        {
+            "file": "src/main/resources/alfresco/webscripts/extension/js/SIDE/util/Logger.js",
+            "line": 65,
+            "params": [
+                {
+                    "name": "The",
+                    "description": "default logger object is augmented to provide more flexibility"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Logger",
+            "module": "SIDE.Util"
+        }
+    ]
+}

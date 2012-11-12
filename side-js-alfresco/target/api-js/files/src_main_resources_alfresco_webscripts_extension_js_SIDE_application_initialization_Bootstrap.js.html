@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src&#x2F;main&#x2F;resources&#x2F;alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;application&#x2F;initialization&#x2F;Bootstrap.js - UNO &#x2F; Procurement Requisition Project</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="..&#x2F;assets/favicon.png">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;combo?3.5.1&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title="UNO &#x2F; Procurement Requisition Project"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.9.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bootstrap.html">Bootstrap</a></li>
+            
+                <li><a href="..&#x2F;classes/Config.html">Config</a></li>
+            
+                <li><a href="..&#x2F;classes/DirectoryTree.html">DirectoryTree</a></li>
+            
+                <li><a href="..&#x2F;classes/Group.html">Group</a></li>
+            
+                <li><a href="..&#x2F;classes/OrderFolder.html">OrderFolder</a></li>
+            
+                <li><a href="..&#x2F;classes/People.html">People</a></li>
+            
+                <li><a href="..&#x2F;classes/Person.html">Person</a></li>
+            
+                <li><a href="..&#x2F;classes/Remote.html">Remote</a></li>
+            
+                <li><a href="..&#x2F;classes/Rule.html">Rule</a></li>
+            
+                <li><a href="..&#x2F;classes/Start.html">Start</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/SIDE.Alfresco.Workflow.html">SIDE.Alfresco.Workflow</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.initialization.html">SIDE.application.initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.requisition.bizrule.html">SIDE.application.requisition.bizrule</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.application.requisition.initialization.html">SIDE.application.requisition.initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.Initialization.html">SIDE.Initialization</a></li>
+            
+                <li><a href="..&#x2F;modules/SIDE.Procurement.html">SIDE.Procurement</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src&#x2F;main&#x2F;resources&#x2F;alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;application&#x2F;initialization&#x2F;Bootstrap.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;base.js&quot;&gt;
+
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Workflow&#x2F;Start.js&quot;&gt;
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;application&#x2F;initialization&#x2F;DirectoryTree.js&quot;&gt;
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;application&#x2F;requisition&#x2F;initialization&#x2F;Rule.js&quot;&gt;
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Person.js&quot;&gt;
+&lt;import resource=&quot;classpath:alfresco&#x2F;webscripts&#x2F;extension&#x2F;js&#x2F;SIDE&#x2F;Alfresco&#x2F;Group.js&quot;&gt;
+
+&#x2F;*
+&lt;import resource=&quot;&#x2F;app:company_home&#x2F;Sites&#x2F;side&#x2F;documentLibrary&#x2F;SIDE&#x2F;application&#x2F;resources&#x2F;scripts&#x2F;SIDE&#x2F;Alfresco&#x2F;Workflow&#x2F;Start.js&quot;&gt;
+&lt;import resource=&quot;&#x2F;app:company_home&#x2F;Sites&#x2F;side&#x2F;documentLibrary&#x2F;SIDE&#x2F;application&#x2F;resources&#x2F;scripts&#x2F;SIDE&#x2F;application&#x2F;initialization&#x2F;DirectoryTree.js&quot;&gt;
+&lt;import resource=&quot;&#x2F;app:company_home&#x2F;Sites&#x2F;side&#x2F;documentLibrary&#x2F;SIDE&#x2F;application&#x2F;resources&#x2F;scripts&#x2F;SIDE&#x2F;application&#x2F;requisition&#x2F;initialization&#x2F;Rule.js&quot;&gt;
+&lt;import resource=&quot;&#x2F;app:company_home&#x2F;Sites&#x2F;side&#x2F;documentLibrary&#x2F;SIDE&#x2F;application&#x2F;resources&#x2F;scripts&#x2F;SIDE&#x2F;Alfresco&#x2F;Person.js&quot;&gt;
+&lt;import resource=&quot;&#x2F;app:company_home&#x2F;Sites&#x2F;side&#x2F;documentLibrary&#x2F;SIDE&#x2F;application&#x2F;resources&#x2F;scripts&#x2F;SIDE&#x2F;Alfresco&#x2F;Group.js&quot;&gt;
+*&#x2F;
+
+
+SIDE.define(&quot;SIDE.application.initialization.Bootstrap&quot;);
+
+&#x2F;**
+ * This class contains all the initialization data to bootstrap
+ * a complete Requisition application. It&#x27;s the generic part.
+ *
+ * @class Bootstrap
+ * @module SIDE.Initialization
+ * @submodule SIDE.application.initialization
+ * @constructor
+ *&#x2F;
+SIDE.application.initialization.Bootstrap = function(config) {
+	this.config = config;
+}
+&#x2F;**
+ * Initializes the bootstrap process by creating all the required
+ * elements for a requisition application.
+ *
+ * @method init
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.init = function() {
+
+	var s = this.createSite();
+
+	&#x2F;**
+	 * Base groups must exist before the directories&#x27; creation. Indeed,
+	 * final directories from the site structure will be included into
+	 * these base groups.
+	 *&#x2F;
+	this.createApplicationGroups();
+
+	&#x2F;* Creates folder structure, groups and assigns permissions *&#x2F;
+	this.createSiteStructure(s);
+
+	&#x2F;**
+	 * Users are created with an avatar if a people-username.png image
+	 * is available somewhere in the Alfresco repository
+	 *&#x2F;
+	this.createUsers();
+
+	&#x2F;**
+	 * Users need to have SiteConsumer right on the application site
+	 * in order to see it
+	 *&#x2F;
+	this.addUsersInApplicationSiteGroup();
+
+	&#x2F;**
+	 * Users are not directly included into the application groups. They
+	 * are included into the organization groups which are, in their turn,
+	 * included into the application groups, corresponding to the ones
+	 * used by the workflows.
+	 *&#x2F;
+	this.addUsersInOrganizationGroups();
+
+	&#x2F;&#x2F;this.createWorkflowStartScript(s);
+	this.createRules();
+}
+
+&#x2F;**
+ * Creates the Alfresco Share site
+ *
+ * @method createSite
+ *
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.createSite = function() {
+    var s = null;
+    try {
+      s = siteService.createSite(
+		&quot;site-dashboard&quot;,	&#x2F;&#x2F; shortName
+		this.config.application.name,
+		this.config.application.title,
+		this.config.application.description,
+		true &#x2F;&#x2F; visibility
+      );
+    } catch (e) {
+      logger.log(e);
+      s = siteService.getSite(this.config.application.name);
+    }
+  	return s;
+}
+
+&#x2F;**
+ * Creates site structure
+ *
+ * @method createSiteStructure
+ *
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.createSiteStructure = function(s) {
+  if (s != null) {
+	var baseDir = &quot;&#x2F;app:company_home&#x2F;st:sites&#x2F;cm:&quot; + s.shortName + &quot;&#x2F;cm:documentLibrary&quot;;
+    logger.log(baseDir);
+
+	var tree = new SIDE.application.initialization.DirectoryTree(
+		baseDir,
+		this.config.organization,
+		this.config.applicationFolders,
+		this.config.applicationGroups	&#x2F;&#x2F; used by the workflow
+	);
+
+	tree.initialize();
+
+  } else {
+    logger.log(&quot;The Alfresco Share site is not available. Stop.&quot;);
+    throw &quot;NotExistingAlfrescoShareSite&quot;;
+  }
+}
+
+&#x2F;**
+ * Creates the js script to start workflow for Requisition
+ *
+ * @method createWorkflowStartScript
+ *
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.createWorkflowStartScript = function(s) {
+&#x2F;&#x2F;	var baseDir = &quot;&#x2F;app:company_home&#x2F;st:sites&#x2F;cm:&quot; + s.shortName + &quot;&#x2F;cm:documentLibrary&quot;;
+	var baseDir = &quot;&#x2F;app:company_home&#x2F;st:sites&#x2F;cm:&quot; + &quot;side&quot; + &quot;&#x2F;cm:documentLibrary&quot;;
+	SIDE.Alfresco.Workflow.Start.createScript(
+		&quot;jbpm$wfbxRequisition:Requisition&quot;,
+		&quot;Please review this PR: &quot;,
+		7,
+&#x2F;&#x2F;		&quot;&#x2F;app:company_home&#x2F;app:dictionary&#x2F;app:scripts&quot;,
+		baseDir + &quot;&#x2F;cm:SIDE&#x2F;cm:application&#x2F;cm:requisition&#x2F;cm:scripts&quot;,
+		null
+	);
+}
+
+&#x2F;**
+ * Creates rules for requisition application into the leaves of the
+ * previously created directory structure
+ *
+ * @method createRules
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.createRules = function() {
+	SIDE.application.requisition.initialization.Rule.initCreation();
+}
+
+&#x2F;**
+ * Creates users so you can play with the application directly
+ *
+ * @method createUsers
+ *
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.createUsers = function() {
+	logger.log(&quot;Creating Users&quot;);
+
+	for (p in this.config.persons) {
+	  var user = this.config.persons[p];
+	  SIDE.Alfresco.Person.createUser(user[0],user[1],user[2],user[3],user[4],user[5],user[6],user[7]);
+	};
+}
+
+&#x2F;**
+ * Adds users in the groups used by the workflow. They are different from
+ * the ones created for the directory structure which manage content access
+ * through a set of explicit permissions.
+ *
+ * @method addUsersInApplicationSiteGroup
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.addUsersInApplicationSiteGroup = function() {
+	logger.log(&quot;Adding users in application site group as consumer&quot;);
+
+	for (p in this.config.persons) {
+	  var user = this.config.persons[p];
+	  var userName = user[0];
+	  logger.log(&quot;Adding -&quot; + userName + &quot;- into -&quot; + &quot;site_&quot; + this.config.application.name + &quot;_SiteConsumer.&quot;);
+	  people.addAuthority(
+		  people.getGroup(&quot;GROUP_&quot; + &quot;site_&quot; + this.config.application.name + &quot;_SiteConsumer&quot;),
+		  people.getPerson(userName)
+	  );
+	};
+}
+
+&#x2F;**
+ * Creates groups used by the workflows. Without these groups, workflows
+ * are unusable.
+ *
+ * @method createApplicationGroups
+ *
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.createApplicationGroups = function() {
+	for (g in this.config.applicationGroups) {
+      var group = this.config.applicationGroups[g];
+	  logger.log(&quot;Creating -&quot; + g + &quot;- group &#x2F; -&quot; + group.description + &quot;.&quot;);
+	  SIDE.Alfresco.Group.create(g, group.description);
+	}
+}
+
+&#x2F;**
+ * Adds users in organization groups so you can really access the data
+ * and use the application. Indeed, organization groups are included into
+ * application groups so, by transitivity, you&#x27;ll be able to manage the
+ * workflow in relation with your membership.
+ *
+ * @method addUsersInOrganizationGroups
+ *
+ *&#x2F;
+SIDE.application.initialization.Bootstrap.prototype.addUsersInOrganizationGroups = function() {
+	for (g in this.config.organizationGroups) {
+      var group = this.config.organizationGroups[g];
+	  logger.log(&quot;Adding members (users or groups) to -&quot; + g + &quot;.&quot;);
+
+	  for (i in group.members) {
+	    var member = group.members[i];
+
+        var _member = null;
+        if (member.indexOf(&quot;GROUP_&quot;) == -1) {
+          _member = people.getPerson(member);
+          logger.log(&quot;Person name: &quot; + member + &quot; &#x2F; &quot; + &quot;Person object: &quot; + _member);
+        } else {
+          _member = people.getGroup(member);
+          logger.log(&quot;Group name: &quot; + member + &quot; &#x2F; &quot; + &quot;Group object: &quot; + _member);
+        }
+
+	    var _g = SIDE.Alfresco.Group.get(g);
+	    logger.log(&quot;Group name: &quot; + g + &quot; &#x2F; &quot; + &quot;Group object: &quot; + _g);
+
+	    try {
+	      var a = people.addAuthority(_g, _member);
+          var name = _member.properties[&quot;userName&quot;] || _member.properties[&quot;authorityDisplayName&quot;];
+	      logger.log(name + &quot; has been successfully added to group &quot; + _g.properties[&quot;authorityDisplayName&quot;]);
+	    } catch (e) {
+	      logger.log(e);
+	      logger.log(member + &quot; can&#x27;t be added to group &quot; + g + &quot;. Do the user&#x2F;group and parent group exist? Is it already configured?&quot;);
+	    }
+	  }
+	}
+}
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

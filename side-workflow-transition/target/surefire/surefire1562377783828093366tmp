@@ -1,0 +1,5 @@
+#surefire
+#Tue Jul 17 18:08:17 CEST 2012
+user.dir=/Users/bluexml/opt/local/workspaces/demos/Requisition/src/modules/mavenProjects/side-workflow-transition
+localRepository=/Users/bluexml/.m2/repository
+basedir=/Users/bluexml/opt/local/workspaces/demos/Requisition/src/modules/mavenProjects/side-workflow-transition

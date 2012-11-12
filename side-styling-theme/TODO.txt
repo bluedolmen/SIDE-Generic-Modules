@@ -1,0 +1,5 @@
+=Enhancements
+* Add a empty custom.css which may be overridden at runtime in the /share/css/side/side-theme directory to exactly suit users needs. This will require to move present custom content into another file
+* Add an empty custom-pre.css and custom-post.css around side-theme so it may be adapted in any way and takes precedence if required
+
+=Bugs
