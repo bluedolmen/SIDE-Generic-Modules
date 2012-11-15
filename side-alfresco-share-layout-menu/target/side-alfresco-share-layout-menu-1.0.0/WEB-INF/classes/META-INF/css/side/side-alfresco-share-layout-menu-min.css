@@ -1,8 +1,0 @@
-.document-metadata-header{padding-bottom:0;}
-#template_x002e_folder-actions_x002e_folder-details #show-actions-menu,#template_x002e_folder-links_x002e_folder-details #show-links-menu{top:-2em;}
-#template_x002e_document-actions_x002e_document-details #show-actions-menu,template_x002e_document-links_x002e_document-details #show-links-menu{top:-2em;}
-#show-actions-menu{position:relative;padding-right:1em;float:left;text-decoration:underline;}
-#show-links-menu{position:relative;top:-2em;float:left;text-decoration:underline;}
-.show-menu{text-align:left;}
-.folder-actions,.folder-links,.document-actions,.document-links{text-align:left;}
-.folder-actions .doclist,.document-actions .doclist{visibility:inherit;}

@@ -1,7 +1,0 @@
-.format-info{display:none;}
-select,input{border:2px solid #dadada;border-radius:7px;font-size:1em;padding:5px;}
-select,input:focus{outline:none;border-color:#9ecaed;box-shadow:0 0 10px #9ecaed;}
-.share-form .form-container .form-fields{border:none!important;}
-.set .set-title{border-bottom-color:grey;font-size:1em;font-weight:bold;}
-.set-panel-heading{font-size:1.5em;}
-.set-bordered-panel-heading{color:navy!important;font-family:arial,times new roman,sans-serif;font-size:18px;font-weight:bold;margin-bottom:5px;text-align:center;background-color:#c8c8e4!important;line-height:18px;}

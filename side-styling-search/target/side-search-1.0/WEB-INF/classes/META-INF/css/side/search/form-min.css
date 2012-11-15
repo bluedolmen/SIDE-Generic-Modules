@@ -1,6 +1,0 @@
-@import "form-left.css";@import "form-datetime.css";@import "form-inputEx.css";.share-form .form-container .caption{padding:1em 1em 0!important;min-width:50px;width:auto;float:right;}
-.share-form .form-container .form-fields{padding:1em 1em 0!important;min-width:400px;width:auto;}
-.form-container .form-field input{width:15em;margin-bottom:none;}
-.form-container .help-text{margin-left:11.7em;}
-.form-container .form-field{min-width:269px;margin-bottom:.2em!important;}
-.object-finder .show-picker{display:inline!important;}

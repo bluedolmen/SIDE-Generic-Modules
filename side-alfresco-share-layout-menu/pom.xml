@@ -5,7 +5,8 @@
     <artifactId>Requisition</artifactId>
     <groupId>side.project</groupId>
     <version>1.0</version>
-  </parent>
+    <relativePath>../side-superpom/pom.xml</relativePath>
+	</parent>
 	<groupId>org.sidelabs.ui</groupId>
 	<artifactId>side-alfresco-share-layout-menu</artifactId>
 	<name>side-alfresco-share-layout-menu</name>

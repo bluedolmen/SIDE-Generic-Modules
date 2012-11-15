@@ -5,7 +5,8 @@
     <artifactId>Requisition</artifactId>
     <groupId>side.project</groupId>
     <version>1.0</version>
-  </parent>
+    <relativePath>../side-superpom/pom.xml</relativePath>
+	</parent>
 	<groupId>code.google.com.alfresco</groupId>
 	<artifactId>external-alfresco-share-datatable-property-type</artifactId>
 	<name>external-alfresco-share-datatable-property-type</name>

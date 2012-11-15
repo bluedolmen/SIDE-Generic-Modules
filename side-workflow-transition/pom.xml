@@ -5,12 +5,13 @@
     <artifactId>Requisition</artifactId>
     <groupId>side.project</groupId>
     <version>1.0</version>
-  </parent>
-	<groupId>org.sidelabs</groupId>
+    <relativePath>../side-superpom/pom.xml</relativePath>
+	</parent>
+	<groupId>org.sidelabs.workflow</groupId>
 	<artifactId>side-workflow-transition</artifactId>
 	<packaging>jar</packaging>
 	<name>side-workflow-transition</name>
-	<version>1.0</version>
+	<version>1.0.0</version>
 	<description>This project makes workflow action development easier by providing a way to use dynamically js without the need to restart alfresco/share at each modification.</description>
 	<properties>
 		<env>local</env>
