@@ -1,0 +1,8 @@
+.share-form .form-container .form-fields{padding:1em 1em 0!important;min-width:400px;width:auto;}
+.form-container .form-field .viewmode-label{width:12em;margin-bottom:none;}
+.form-container .form-field .viewmode-field{min-width:269px;margin-bottom:.2em!important;padding:0;}
+.form-container .viewmode-field .current-values div{display:block!important;margin-left:13em!important;padding:0!important;}
+.viewmode-field div{padding:0;}
+.viewmode-value:after{position:absolute;top:-10px;}
+#template_x002e_document-metadata_x002e_document-details-form-fields .set .yui-u{float:left;width:100%;}
+#template_x002e_document-metadata_x002e_document-details-form-fields .set .yui-u img{padding:0;top:0;}

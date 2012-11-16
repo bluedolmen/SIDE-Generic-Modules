@@ -1,0 +1,5 @@
+#main-search-operator{clear:both;}
+#search-parameters{display:none;}
+.main-search-parameter{display:none;}
+select.default-search-operator{// Overridden by width:auto;width:50px;}
+.keywords-box{display:none;}

@@ -1,0 +1,15 @@
+
+.share-form .form-container .form-fields {
+	background-color: white;
+	height: 300px;
+}
+
+select {
+	//	width: 100px;
+	// Overridden by width: auto;
+	float: left;
+}
+
+label {
+	clear: none;
+}
