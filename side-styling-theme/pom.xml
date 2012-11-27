@@ -8,8 +8,8 @@
     <relativePath>../side-superpom/pom.xml</relativePath>
 	</parent>
 	<groupId>org.sidelabs.ui</groupId>
-	<artifactId>side-theme</artifactId>
-	<name>side-theme</name>
+	<artifactId>side-styling-theme</artifactId>
+	<name>side-styling-theme</name>
 	<version>1.0.0</version>
 	<packaging>zip</packaging>
 	<dependencies>

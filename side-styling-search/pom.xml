@@ -8,8 +8,8 @@
     <relativePath>../side-superpom/pom.xml</relativePath>
 	</parent>
 	<groupId>org.sidelabs.ui</groupId>
-	<artifactId>side-search</artifactId>
-	<name>side-search</name>
+	<artifactId>side-styling-search</artifactId>
+	<name>side-styling-search</name>
 	<version>1.0.0</version>
 	<packaging>zip</packaging>
 	<dependencies>

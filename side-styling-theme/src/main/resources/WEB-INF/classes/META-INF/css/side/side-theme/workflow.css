@@ -1,72 +1,71 @@
-#page_x002e_data-header_x002e_standaloneedittask-body,
-#page_x002e_data-form_x002e_standaloneedittask-form-container {
+@import "workflow-custom.css";
+
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default-form-container {
+	min-width: 0px;
+}
+
+#page_x002e_data-header_x002e_standaloneedittask,
+#page_x002e_data-form_x002e_standaloneedittask {
+	width: 350px;
+}
+
+#page_x002e_data-header_x002e_standaloneedittask_x0023_default-body,
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_form-container {
 	min-width: 269px !important;
 	width: auto;
 }
 
-#page_x002e_data-header_x002e_standaloneedittask-body > div.clear {
+#page_x002e_data-header_x002e_standaloneedittask_x0023_default-body > div.clear {
 	clear: none;
 }
 
-#page_x002e_data-header_x002e_standaloneedittask-body h1 {
+#page_x002e_data-header_x002e_standaloneedittask_x0023_default-body h1 {
 	display: none;
 }
 
-#page_x002e_data-header_x002e_standaloneedittask-body actions {
+#page_x002e_data-header_x002e_standaloneedittask_x0023_default-body actions {
 	float: right;
 }
 
-#page_x002e_data-header_x002e_standaloneedittask-body .unassigned-message {
+#page_x002e_data-header_x002e_standaloneedittask_x0023_default-body .unassigned-message {
 	float: left;
 }
 
-#page_x002e_data-form_x002e_standaloneedittask-form-fields {
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default-form-fields {
 	min-width: 269px;
 }
 
-#page_x002e_data-form_x002e_standaloneedittask_prop_bpm_description-container,
-#page_x002e_data-form_x002e_standaloneedittask_prop_taskOwner-container {
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_bpm_description-container,
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_taskOwner-container {
 	clear: both;
 }
 
-#page_x002e_data-form_x002e_standaloneedittask_prop_taskOwner-container span.viewmode-label {
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_bpm_description {
+}
+
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_taskOwner-container span.viewmode-label {
 	width: 8em;
 }
 
-#page_x002e_data-form_x002e_standaloneedittask_prop_bpm_percentComplete-container,
-#page_x002e_data-form_x002e_standaloneedittask_prop_bpm_priority-container {
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_bpm_percentComplete-container,
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_bpm_priority-container {
 	display: none;
 }
 
-#page_x002e_data-form_x002e_standaloneedittask_assoc_packageItems-cntrl-container,
-#page_x002e_data-form_x002e_standaloneedittask-form-buttons {
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_assoc_packageItems-cntrl-container,
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default-form-buttons {
 	display: none;
 }
 
-#page_x002e_data-form_x002e_standaloneedittask_prop_transitions-container {
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_transitions-container {
 	top: 20px;
 }
 
-#page_x002e_data-form_x002e_standaloneedittask_prop_transitions {
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_transitions {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#page_x002e_data-form_x002e_standaloneedittask_prop_transitions-fixPreparation2 {
-	margin-right: 5px;
-/*
-	background: url(http://www.bluexml.com/resources/icons/oxygen-icons/22x22/actions/view-calendar-day.png) 0 0px no-repeat !important;
-*/
-}
-
-#page_x002e_data-form_x002e_standaloneedittask_prop_transitions-fixPreparation2 .first-child {
-	background: url(http://www.bluexml.com/resources/icons/crystal/16x16/actions/agt_action_fail.png) 5px 2px no-repeat !important;
-}
-
-#page_x002e_data-form_x002e_standaloneedittask_prop_transitions-toApprobation .first-child {
-	background: url(http://www.bluexml.com/resources/icons/crystal/16x16/actions/agt_action_success.png) 5px 2px no-repeat !important;
-}
-
-#page_x002e_data-form_x002e_standaloneedittask_prop_transitions-buttons {
+#page_x002e_data-form_x002e_standaloneedittask_x0023_default_prop_transitions-buttons {
 	margin-top: 25px;
 }

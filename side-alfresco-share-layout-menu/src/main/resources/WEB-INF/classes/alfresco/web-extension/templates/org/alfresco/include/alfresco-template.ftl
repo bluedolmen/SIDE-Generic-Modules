@@ -152,7 +152,7 @@
 <#nested>
 
 <!-- SIDE Assets 2 -->
-<@link rel="stylesheet" type="text/css" href="${url.context}/res/css/side/package.css" />
+<@link rel="stylesheet" type="text/css" href="${url.context}/res/css/side/side-alfresco-share-layout-menu.css" />
 
 <@renderStylesheets />
 

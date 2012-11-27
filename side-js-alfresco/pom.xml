@@ -6,12 +6,12 @@
     <groupId>side.project</groupId>
     <version>1.0</version>
   </parent>
-	<groupId>org.sidelabs</groupId>
+	<groupId>org.sidelabs.js</groupId>
 	<artifactId>side-js-alfresco</artifactId>
 	<packaging>amp</packaging>
 	<name>side-js-alfresco</name>
 	<version>1.0.0</version>
-	<description>this is a new Amp project generated using	"com.bluexml.side.Integration.m2.ampArchetype" thanks to change this description</description>
+	<description>Back Office JS Scripts</description>
 	<properties>
 		<env>local</env>
 		<config.target.path>alfresco/module/SIDE_side-js-alfresco</config.target.path>

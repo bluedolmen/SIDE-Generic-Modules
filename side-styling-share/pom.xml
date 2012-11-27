@@ -8,8 +8,8 @@
     <relativePath>../side-superpom/pom.xml</relativePath>
 	</parent>
 	<groupId>org.sidelabs.ui</groupId>
-	<artifactId>side-custom-share</artifactId>
-	<name>side-custom-share</name>
+	<artifactId>side-styling-share</artifactId>
+	<name>side-styling-share</name>
 	<version>1.0.0</version>
 	<packaging>zip</packaging>
 	<dependencies>
